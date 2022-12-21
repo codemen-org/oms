@@ -288,7 +288,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               reAnimateOnVisibility: true,
                               scrollDirection: Axis.horizontal,
                               itemCount:
-                                  catList!.length > 9 ? 10 : catList.length,
+                                  catList.length > 9 ? 10 : catList.length,
                               itemBuilder: animationItemBuilder(
                                 (index) {
                                   return ItemWidget(

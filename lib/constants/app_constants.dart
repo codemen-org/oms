@@ -15,12 +15,20 @@ class AssetIcons {
   // static const String splash = 'assets/images/splash.png';
 
   //Icons
-  static const String splash = 'assets/icons/plix_icon.png';
+  static const String splash = 'assets/icons/oms_icon.png';
+  static const String splashScreen = 'assets/icons/splash_screen.png';
   static const String home = 'assets/icons/home.svg';
   static const String search = 'assets/icons/search.svg';
   static const String cart = 'assets/icons/cart.svg';
-  static const String profile = 'assets/icons/profile.svg';
+  static const String profile = 'assets/icons/user.svg';
   static const String shop = 'assets/icons/ic_shop.svg';
+  static const String hrm = 'assets/icons/hrm.svg';
+  static const String notice = 'assets/icons/notice.svg';
+  static const String event = 'assets/icons/event.svg';
+  static const String contact = 'assets/icons/map.svg';
+  static const String logout = 'assets/icons/logout.svg';
+  static const String facebook = 'assets/icons/facebook.svg';
+  static const String instgram = 'assets/icons/instagram.svg';
   //lotti
   static const String lottie_list_loading =
       'assets/lottie/lottie_list_loading.json';

@@ -10,6 +10,7 @@ import 'package:plix/features/dashboard/presentation/home_screen.dart';
 import 'package:plix/features/address/presentation/address_screen.dart';
 import 'package:plix/features/authentication/presentation/login/login_screen.dart';
 import 'package:plix/provider/email.dart';
+import 'package:plix/welcome_screen.dart';
 import 'package:provider/provider.dart';
 
 import '/constants/custome_theme.dart';
@@ -39,10 +40,10 @@ void main() async {
   diSetup();
   await GetStorage.init();
   DioSingleton.instance.create();
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: Colors.black,
-    statusBarColor: AppColors.appColor4D3E39,
-  ));
+  // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+  //   systemNavigationBarColor: Colors.black,
+  //   statusBarColor: AppColors.white,
+  // ));
   await Firebase.initializeApp();
   FirebaseMessaging.onBackgroundMessage(backgroundHandler);
   LocalNotificationService.initialize();

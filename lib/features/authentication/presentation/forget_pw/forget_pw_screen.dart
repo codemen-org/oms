@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:plix/helpers/navigation_service.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../constants/app_color.dart';
@@ -26,8 +27,13 @@ class _ForgotPWScreenState extends State<ForgotPWScreen> {
   TextEditingController vcodeController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
-
+    String? emailvalidation;
   bool validation = false;
+  bool visibility = false;
+  bool visibility1 = false;
+  bool visibility2 = false;
+
+
   bool pwsecure = true;
   bool repwsecure = true;
   @override
@@ -36,290 +42,165 @@ class _ForgotPWScreenState extends State<ForgotPWScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    EmailProvider emailProvider =
-        Provider.of<EmailProvider>(context, listen: false);
-    emailController.text = emailProvider.email;
+ Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Redefine password".tr), centerTitle: true),
+      backgroundColor: Colors.white,
       body: Container(
-        constraints: const BoxConstraints.expand(),
-        decoration: const BoxDecoration(),
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: .05.sw),
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                AppColors.scaffoldColor,
-                AppColors.scaffoldColor,
-              ],
-            ),
-          ),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                UIHelper.verticalSpace(.15.sh),
-                Text(
-                  'Provide your email',
-                  style: TextFontStyle.headline2StyleInter
-                      .copyWith(color: AppColors.appColorF4A4A4A),
-                ),
-                UIHelper.verticalSpaceMedium,
-                UIHelper.verticalSpaceSmall,
-                Form(
-                  key: _formKey,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      //For Email
-
-                      UIHelper.verticalSpaceSmall,
-
-                      UIHelper.verticalSpaceSmall,
-                      TextFormField(
-                        enabled: false,
-                        autovalidateMode: validation
-                            ? AutovalidateMode.always
-                            : AutovalidateMode.disabled,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Email Can\'t be empty';
-                          }
-                          return null;
-                        },
-                        controller: emailController,
-                        keyboardType: TextInputType.emailAddress,
-                        style: TextStyle(
-                          letterSpacing: 1.5,
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w400,
-                          fontStyle: FontStyle.normal,
-                          color: AppColors.headLine2Color,
-                        ),
-                        decoration: InputDecoration(
-                          hintText: 'Enter your email',
-                          hintStyle: TextFontStyle.headline5StyleInter
-                              .copyWith(color: AppColors.appColor9B9B9B),
-                          labelText: 'Email',
-                          labelStyle: TextFontStyle.headline5StyleInter
-                              .copyWith(color: AppColors.appColorF4A4A4A),
-                          errorStyle: TextStyle(
-                            letterSpacing: 1,
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w400,
-                            fontStyle: FontStyle.normal,
-                            color: AppColors.warningColor,
-                          ),
-                        ),
-                      ),
-
-                      UIHelper.verticalSpaceSmall,
-
-                      //For Password
-                      Row(
-                        children: [
-                          Expanded(
-                            flex: 9,
-                            child: TextFormField(
-                              autovalidateMode: validation
-                                  ? AutovalidateMode.always
-                                  : AutovalidateMode.disabled,
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Enter Password';
-                                } else if (value.length <= 5) {
-                                  return 'Password must be  at least 6 characters';
-                                }
-                                return null;
-                              },
-                              controller: passwordController,
-                              obscureText: pwsecure,
-                              style: TextStyle(
-                                letterSpacing: 1.5,
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w400,
-                                fontStyle: FontStyle.normal,
-                                color: AppColors.headLine2Color,
-                              ),
-                              decoration: InputDecoration(
-                                contentPadding: const EdgeInsets.symmetric(
-                                  vertical: 1.0,
-                                ),
-                                hintText: 'Enter your Password',
-                                hintStyle: TextFontStyle.headline5StyleInter
-                                    .copyWith(color: AppColors.appColor9B9B9B),
-                                labelText: 'Password',
-                                labelStyle: TextFontStyle.headline5StyleInter
-                                    .copyWith(color: AppColors.appColorF4A4A4A),
-                                errorStyle: TextStyle(
-                                  letterSpacing: 1,
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w400,
-                                  fontStyle: FontStyle.normal,
-                                  color: AppColors.warningColor,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                              flex: 2,
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 15.0),
-                                child: InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      pwsecure = !pwsecure;
-                                    });
-                                  },
-                                  child: Icon(
-                                    Icons.remove_red_eye,
-                                    size: 30.sp,
-                                    color: pwsecure
-                                        ? AppColors.headLine1Color
-                                        : AppColors.appColor9B9B9B,
-                                  ),
-                                ),
-                              ))
-                        ],
-                      ),
-                      UIHelper.verticalSpaceSmall,
-
-                      //For Password
-                      Row(
-                        children: [
-                          Expanded(
-                            flex: 9,
-                            child: TextFormField(
-                              autovalidateMode: validation
-                                  ? AutovalidateMode.always
-                                  : AutovalidateMode.disabled,
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Retype Password'.tr;
-                                } else if (passwordController.text != value) {
-                                  return 'Password Missmatch'.tr;
-                                }
-                                return null;
-                              },
-                              controller: reTypePasswordController,
-                              obscureText: repwsecure,
-                              style: TextStyle(
-                                letterSpacing: 1.5,
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w400,
-                                fontStyle: FontStyle.normal,
-                                color: AppColors.headLine2Color,
-                              ),
-                              decoration: InputDecoration(
-                                contentPadding: const EdgeInsets.symmetric(
-                                  vertical: 1.0,
-                                ),
-                                hintText: 'Enter your Password'.tr,
-                                hintStyle: TextFontStyle.headline5StyleInter
-                                    .copyWith(color: AppColors.appColor9B9B9B),
-                                labelText: 'Retype Password'.tr,
-                                labelStyle: TextFontStyle.headline5StyleInter
-                                    .copyWith(color: AppColors.appColorF4A4A4A),
-                                errorStyle: TextStyle(
-                                  letterSpacing: 1,
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w400,
-                                  fontStyle: FontStyle.normal,
-                                  color: AppColors.warningColor,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                              flex: 2,
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 15.0),
-                                child: InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      repwsecure = !repwsecure;
-                                    });
-                                  },
-                                  child: Icon(
-                                    Icons.remove_red_eye,
-                                    size: 30.sp,
-                                    color: repwsecure
-                                        ? AppColors.headLine1Color
-                                        : AppColors.appColor9B9B9B,
-                                  ),
-                                ),
-                              ))
-                        ],
-                      ),
-                      UIHelper.verticalSpaceSmall,
-                      TextFormField(
-                        autovalidateMode: validation
-                            ? AutovalidateMode.always
-                            : AutovalidateMode.disabled,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Code Can\'t be empty'.tr;
-                          }
-                          return null;
-                        },
-                        controller: vcodeController,
-                        keyboardType: TextInputType.number,
-                        style: TextStyle(
-                          letterSpacing: 1.5,
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w400,
-                          fontStyle: FontStyle.normal,
-                          color: AppColors.headLine2Color,
-                        ),
-                        decoration: InputDecoration(
-                          hintText:
-                              'Enter your verification code check email'.tr,
-                          hintStyle: TextFontStyle.headline5StyleInter
-                              .copyWith(color: AppColors.appColor9B9B9B),
-                          labelText: 'Verification Code'.tr,
-                          labelStyle: TextFontStyle.headline5StyleInter
-                              .copyWith(color: AppColors.appColorF4A4A4A),
-                          errorStyle: TextStyle(
-                            letterSpacing: 1,
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w400,
-                            fontStyle: FontStyle.normal,
-                            color: AppColors.warningColor,
-                          ),
-                        ),
-                      ),
-                      UIHelper.verticalSpaceMedium,
-                      UIHelper.verticalSpaceSemiLarge,
-                      customeButton(
-                        name: 'Change Password'.tr,
-                        height: .065.sh,
-                        minWidth: double.infinity,
-                        borderRadius: 5.r,
-                        color: AppColors.primaryColor,
-                        textStyle: TextFontStyle.headline4StyleInter
-                            .copyWith(color: AppColors.appColorFFFFFF),
-                        context: context,
-                        onCallBack: () async {
-                          if (_formKey.currentState!.validate()) {
-                            await postForgertPwRXObj.postProductBasicData(
-                                emailController.text,
-                                passwordController.text,
-                                reTypePasswordController.text,
-                                vcodeController.text);
-                          }
-                        },
-                      ),
-                    ],
+        padding: EdgeInsets.symmetric(horizontal: .05.sw),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              UIHelper.verticalSpaceSemiLarge,
+              Image.asset(AssetIcons.splash, height: .18.sh, width: .18.sh),
+              Column(
+                children: <Widget>[
+                  Text(
+                    "Change Password ",
+                    style: TextFontStyle.headline5StyleInter,
                   ),
+                  UIHelper.verticalSpaceSmall,
+                  Text(
+                    "Dolor sit amet consectetur Lacus \n  convallis sem risus .",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: AppColors.text40,
+                    ),
+                  ),
+                  UIHelper.verticalSpaceSmall,
+                  Container(
+                    width: 30.0,
+                    decoration: BoxDecoration(
+                        border: Border(
+                            bottom: BorderSide(
+                      color: AppColors.primeryColor,
+                      width: 3.0,
+                    ))),
+                  ),
+                  UIHelper.verticalSpaceMedium,
+                ],
+              ),
+              Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    //passwords
+                    Text(
+                      "Current Password",
+                      style: TextStyle(color: AppColors.text40),
+                    ),
+                    UIHelper.verticalSpaceSmall,
+                    TextFormField(
+                      obscureText: !visibility,
+                      decoration: InputDecoration(
+                        hintText: "Enter Password",
+                        suffixIcon: IconButton(
+                          color: AppColors.text60,
+                          onPressed: () {
+                            setState(() {
+                              visibility = !visibility;
+                            });
+                          },
+                          icon: Icon(visibility == false
+                              ? Icons.visibility
+                              : Icons.visibility_off),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                width: 1.0, color: AppColors.text20)),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: AppColors.text20)),
+                      ),
+                    ),
+
+                    UIHelper.verticalSpaceMedium,
+                    Text(
+                      "New Password",
+                      style: TextStyle(color: AppColors.text40),
+                    ),
+                    UIHelper.verticalSpaceSmall,
+                    TextFormField(
+                      obscureText: !visibility1,
+                      decoration: InputDecoration(
+                        hintText: "Enter Password",
+                        suffixIcon: IconButton(
+                          color: AppColors.text60,
+                          onPressed: () {
+                            setState(() {
+                              visibility1 = !visibility1;
+                            });
+                          },
+                          icon: Icon(visibility1 == false
+                              ? Icons.visibility
+                              : Icons.visibility_off),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                width: 1.0, color: AppColors.text20)),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: AppColors.text20)),
+                      ),
+                    ),
+
+                    UIHelper.verticalSpaceSmall,
+                    UIHelper.verticalSpaceSmall,
+                    Text(
+                      "Confirm Password",
+                      style: TextStyle(color: AppColors.text40),
+                    ),
+                    UIHelper.verticalSpaceSmall,
+                    TextFormField(
+                      obscureText: !visibility2,
+                      decoration: InputDecoration(
+                        hintText: "Enter Password",
+                        suffixIcon: IconButton(
+                          color: AppColors.text60,
+                          onPressed: () {
+                            setState(() {
+                              visibility2 = !visibility2;
+                            });
+                          },
+                          icon: Icon(visibility2 == false
+                              ? Icons.visibility
+                              : Icons.visibility_off),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                width: 1.0, color: AppColors.text20)),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: AppColors.text20)),
+                      ),
+                    ),
+                  ],
                 ),
-                UIHelper.verticalSpaceSmall,
-              ],
-            ),
+              ),
+              UIHelper.verticalSpaceSmall,   
+              UIHelper.verticalSpaceSmall,
+              customeButton(
+                name: 'Change',
+                height: .065.sh,
+                minWidth: double.infinity,
+                borderRadius: 5.r,
+                color: AppColors.primeryColor,
+                textStyle: TextFontStyle.headline5StyleInter
+                    .copyWith(color: AppColors.white),
+                context: context,
+                onCallBack: () async {
+                  NavigationService.navigateToReplacement(
+                      Routes.naviGationScreen);
+                },
+              ),
+              UIHelper.verticalSpaceLarge,
+              UIHelper.verticalSpaceLarge,
+              Text(
+                "(c) 2022 Codemen. All Rights Reserved.",
+                style: TextStyle(
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.w300,
+                    color: AppColors.text40),
+              ),
+            ],
           ),
         ),
       ),

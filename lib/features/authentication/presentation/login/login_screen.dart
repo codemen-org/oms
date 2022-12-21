@@ -26,36 +26,72 @@ class _LogeinScreenState extends State<LogeinScreen> {
 
   String? emailvalidation;
   bool validation = false;
+  bool visibility = false;
+  bool isSwitched = false;
+
+  void toogleSwitch(bool value) {
+    if (isSwitched == false) {
+      setState(() {
+        isSwitched = true;
+      });
+    } else {
+      setState(() {
+        isSwitched = false;
+      });
+    }
+  }
 
   bool pwsecure = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: .05.sw),
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              AppColors.loginBackground,
-              AppColors.loginBackground,
-            ],
-          ),
-        ),
         child: SingleChildScrollView(
           child: Column(
             children: [
               UIHelper.verticalSpaceSemiLarge,
               Image.asset(AssetIcons.splash, height: .18.sh, width: .18.sh),
-              UIHelper.verticalSpaceLarge,
-              //  Spacer(),
+              Column(
+                children: <Widget>[
+                  Text(
+                    "Sign In",
+                    style: TextFontStyle.headline5StyleInter,
+                  ),
+                  UIHelper.verticalSpaceSmall,
+                  Text(
+                    "Dolor sit amet consectetur Lacus \n  convallis sem risus .",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: AppColors.text40,
+                    ),
+                  ),
+                  UIHelper.verticalSpaceSmall,
+                  Container(
+                    width: 30.0,
+                    decoration: BoxDecoration(
+                        border: Border(
+                            bottom: BorderSide(
+                      color: AppColors.primeryColor,
+                      width: 3.0,
+                    ))),
+                  ),
+                  UIHelper.verticalSpaceMedium,
+                ],
+              ),
               Form(
                 key: _formKey,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    //For Email
+                  children: <Widget>[
+                    // email
+                    Text(
+                      "Email",
+                      style: TextStyle(color: AppColors.text40),
+                    ),
+                    UIHelper.verticalSpaceSmall,
                     TextFormField(
                       autovalidateMode: validation
                           ? AutovalidateMode.always
@@ -68,121 +104,101 @@ class _LogeinScreenState extends State<LogeinScreen> {
                       },
                       controller: emailController,
                       keyboardType: TextInputType.emailAddress,
-                      style: TextStyle(
-                        letterSpacing: 1.5,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
-                        fontStyle: FontStyle.normal,
-                        color: AppColors.scaffoldColor,
-                      ),
                       decoration: InputDecoration(
-                        hintText: 'Enter your email or phone',
-                        hintStyle: TextFontStyle.headline5StyleInter
-                            .copyWith(color: AppColors.appColorFFFFFF),
-                        labelText: 'Email',
-                        labelStyle: TextFontStyle.headline5StyleInter
-                            .copyWith(color: AppColors.appColorFFFFFF),
-                        errorStyle: TextStyle(
-                          letterSpacing: 1,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w400,
-                          fontStyle: FontStyle.normal,
-                          color: AppColors.warningColor,
-                        ),
+                        hintText: "Enter Email",
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                width: 1.0, color: AppColors.text20)),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: AppColors.text20)),
                       ),
                     ),
                     UIHelper.verticalSpaceMedium,
 
-                    //For Password
-                    Row(children: [
-                      Expanded(
-                        flex: 9,
-                        child: TextFormField(
-                          autovalidateMode: validation
-                              ? AutovalidateMode.always
-                              : AutovalidateMode.disabled,
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Enter Password';
-                            }
-                            return null;
+                    //passwords
+                    Text(
+                      "Password",
+                      style: TextStyle(color: AppColors.text40),
+                    ),
+                    UIHelper.verticalSpaceSmall,
+                    TextFormField(
+                      autovalidateMode: validation
+                          ? AutovalidateMode.always
+                          : AutovalidateMode.disabled,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Enter Password';
+                        }
+                        return null;
+                      },
+                      controller: passwordController,
+                      obscureText: !visibility,
+                      decoration: InputDecoration(
+                        hintText: "Enter Password",
+                        suffixIcon: IconButton(
+                          color: AppColors.text60,
+                          onPressed: () {
+                            setState(() {
+                              visibility = !visibility;
+                            });
                           },
-                          controller: passwordController,
-                          obscureText: pwsecure,
-                          style: TextStyle(
-                            letterSpacing: 1.5,
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w400,
-                            fontStyle: FontStyle.normal,
-                            color: AppColors.scaffoldColor,
-                          ),
-                          decoration: InputDecoration(
-                            contentPadding: const EdgeInsets.symmetric(
-                              vertical: 1.0,
-                            ),
-                            hintText: 'Enter your Password',
-                            hintStyle: TextFontStyle.headline5StyleInter
-                                .copyWith(color: AppColors.appColorFFFFFF),
-                            labelText: "Password",
-                            labelStyle: TextFontStyle.headline5StyleInter
-                                .copyWith(color: AppColors.appColorFFFFFF),
-                            errorStyle: TextStyle(
-                              letterSpacing: 1,
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w400,
-                              fontStyle: FontStyle.normal,
-                              color: AppColors.warningColor,
-                            ),
-                          ),
+                          icon: Icon(visibility == false
+                              ? Icons.visibility
+                              : Icons.visibility_off),
                         ),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                width: 1.0, color: AppColors.text20)),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: AppColors.text20)),
                       ),
-                      Expanded(
-                          flex: 2,
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 15.0),
-                            child: InkWell(
-                              onTap: () {
-                                setState(() {
-                                  pwsecure = !pwsecure;
-                                });
-                              },
-                              child: Icon(
-                                Icons.remove_red_eye,
-                                size: 30.sp,
-                                color: pwsecure
-                                    ? AppColors.headLine1Color
-                                    : AppColors.appColor9B9B9B,
-                              ),
-                            ),
-                          ))
-                    ])
+                    ),
                   ],
                 ),
               ),
-
               UIHelper.verticalSpaceSemiLarge,
-              Center(
-                child: TextButton(
-                  child: Text(
-                    'Forgot password?'.tr,
-                    style: TextFontStyle.headline4StyleInter,
-                    textAlign: TextAlign.center,
+              Row(
+                children: <Widget>[
+                  Switch(
+                    value: isSwitched,
+                    onChanged: toogleSwitch,
+                    activeColor: AppColors.primeryColor,
                   ),
-                  onPressed: () {
-                    NavigationService.navigateTo(Routes.emailEntryScreen);
-                  },
-                ),
+                  TextButton(
+                    child: Text(
+                      "Remember Me",
+                      style: TextStyle(color: AppColors.text40),
+                    ),
+                    onPressed: () {},
+                  ),
+                  UIHelper.horizontalSpaceSemiLarge,
+                  Spacer(),
+                  TextButton(
+                    child: Text(
+                      'Forgot password?',
+                      style: TextStyle(
+                        color: AppColors.text40,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    onPressed: () {
+                      NavigationService.navigateTo(
+                        Routes.emailEntryScreen,
+                      );
+                    },
+                  ),
+                ],
               ),
-              UIHelper.verticalSpaceSemiLarge,
-              //    Spacer(),
+              UIHelper.verticalSpaceSmall,
+              UIHelper.verticalSpaceSmall,
               customeButton(
-                name: 'Log in',
+                name: 'Sign In',
                 height: .065.sh,
                 minWidth: double.infinity,
                 borderRadius: 5.r,
-                color: AppColors.inactiveColor,
-                textStyle: TextFontStyle.headline4StyleInter
-                    .copyWith(color: AppColors.appColor4D3E39),
+                color: AppColors.primeryColor,
+                textStyle: TextFontStyle.headline5StyleInter
+                    .copyWith(color: AppColors.white),
                 context: context,
                 onCallBack: () async {
                   if (_formKey.currentState!.validate()) {
@@ -195,52 +211,21 @@ class _LogeinScreenState extends State<LogeinScreen> {
                     // });
                   } else {
                     const snackBar = SnackBar(
-                        dismissDirection: DismissDirection.endToStart,
                         content: Text('Email or Password is not valid'));
+
                     ScaffoldMessenger.of(context).showSnackBar(snackBar);
                   }
                 },
               ),
-              UIHelper.verticalSpaceSmall,
-              customeButton(
-                name: 'Sign Up'.tr,
-                height: .065.sh,
-                minWidth: double.infinity,
-                borderRadius: 5.r,
-                color: AppColors.primaryColor,
-                textStyle: TextFontStyle.headline4StyleInter
-                    .copyWith(color: AppColors.appColorFFFFFF),
-                context: context,
-                onCallBack: () async {
-                  NavigationService.navigateTo(Routes.signUpScreen);
-                },
-              ),
-              UIHelper.verticalSpaceSmall,
-              Center(
-                child: TextButton(
-                  child: Text(
-                    'Or'.tr,
-                    style: TextFontStyle.headline4StyleInter,
-                    textAlign: TextAlign.center,
-                  ),
-                  onPressed: () {},
-                ),
-              ),
-              UIHelper.verticalSpaceSmall,
-              customeButton(
-                name: 'Explore First'.tr,
-                height: .065.sh,
-                minWidth: double.infinity,
-                borderRadius: 5.r,
-                color: AppColors.debitHigheColor,
-                textStyle: TextFontStyle.headline4StyleInter,
-                context: context,
-                onCallBack: () async {
-                  NavigationService.navigateToReplacement(
-                      Routes.naviGationScreen);
-                },
-              ),
               UIHelper.verticalSpaceLarge,
+              UIHelper.verticalSpaceLarge,
+              Text(
+                "(c) 2022 Codemen. All Rights Reserved.",
+                style: TextStyle(
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.w300,
+                    color: AppColors.text40),
+              ),
             ],
           ),
         ),

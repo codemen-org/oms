@@ -13,6 +13,9 @@ class AppColors {
   static const Color dangerColor = Color(0xFFED7674);
   static const Color warningColor = Color(0xFFE3AC58);
 
+  // font color
+  static const Color appColor000000 = Color(0xFF000000);
+  
   //text
   static const Color text100 = Color(0xFF2B2B2B);
   static const Color text80 = Color(0xFF434343);
@@ -30,7 +33,6 @@ class AppColors {
   static const Color appColor2C303E = Color(0xFF2C303E);
   static const Color appColorEDBB43 = Color(0xFFEDBB43);
   static const Color appColor9B9B9B = Color(0xFF9B9B9B);
-  static const Color appColor000000 = Color(0xFF000000);
   static const Color appColor4D3E39 = Color(0xFF4D3E39);
   static const Color appColor67605F = Color(0xFF67605F);
   static const Color appColorB7242A = Color(0xFFB7242A);

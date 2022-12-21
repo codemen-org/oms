@@ -8,47 +8,105 @@ class TextFontStyle {
   TextFontStyle._();
 
   //new
+  // h semibold
   static final headline1StyleInter = GoogleFonts.poppins(
-      color: AppColors.appColorFFFFFF,
-      fontSize: 50.sp,
-      fontWeight: FontWeight.w600);
-  static final headline2StyleInter = GoogleFonts.inter(
-      color: AppColors.appColorFFFFFF,
-      fontSize: 20.sp,
-      fontWeight: FontWeight.w400);
-  static final headline3StyleInter = GoogleFonts.inter(
-      color: AppColors.appColorFFFFFF,
-      fontSize: 16.sp,
-      fontWeight: FontWeight.w400);
-  static final headline4StyleInter = GoogleFonts.inter(
-      color: AppColors.appColorFFFFFF,
-      fontSize: 14.sp,
-      fontWeight: FontWeight.w400);
-  static final headline10StyleInter = GoogleFonts.inter(
       color: AppColors.appColor000000,
-      fontSize: 14.sp,
-      fontWeight: FontWeight.bold);
-  static final headline5StyleInter = GoogleFonts.inter(
-      color: AppColors.appColorFFFFFF,
-      fontSize: 12.sp,
-      fontWeight: FontWeight.w400);
-  static final headline6StyleInter = GoogleFonts.inter(
-      color: AppColors.appColorFFFFFF,
-      fontSize: 10.sp,
-      fontWeight: FontWeight.bold);
-  static final headline7StyleInter = GoogleFonts.inter(
-      color: AppColors.appColorFFFFFF,
-      fontSize: 10.sp,
-      fontWeight: FontWeight.w400);
-  static final headline8StyleInter = GoogleFonts.inter(
-      color: AppColors.appColorFFFFFF,
-      fontSize: 8.sp,
-      fontWeight: FontWeight.w400);
-  static final headline9StyleInter = GoogleFonts.inter(
-      color: AppColors.appColorFFFFFF,
-      fontSize: 7.sp,
-      fontWeight: FontWeight.bold);
+      fontSize: 50.sp, //34px
+      fontWeight: FontWeight.w600);
+  static final headline2StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 20.sp, //24px
+      fontWeight: FontWeight.w600);
+  static final headline3StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 16.sp, //20px
+      fontWeight: FontWeight.w600);
+  static final headline4StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 14.sp, //18px
+      fontWeight: FontWeight.w600);
+  static final headline5StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 14.sp, //16px
+      fontWeight: FontWeight.w600);
 
+  // h medium
+  static final headline6StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 12.sp, //34px
+      fontWeight: FontWeight.w500);
+  static final headline7StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 10.sp, //24px
+      fontWeight: FontWeight.w500);
+  static final headline8StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 10.sp, //20px
+      fontWeight: FontWeight.w500);
+  static final headline9StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 8.sp, //18px
+      fontWeight: FontWeight.w500);
+  static final headline10StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 7.sp, //16px
+      fontWeight: FontWeight.w500);
+
+  // h regular    
+  static final headline11StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 7.sp, //34px
+      fontWeight: FontWeight.w400);
+  static final headline12StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 7.sp, //24px
+      fontWeight: FontWeight.w400);
+  static final headline13StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 7.sp, //20px
+      fontWeight: FontWeight.w400);
+  static final headline14StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 7.sp, //18px
+      fontWeight: FontWeight.w400);
+  static final headline15StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 7.sp, //16px
+      fontWeight: FontWeight.w400);
+
+  // p regular    
+  static final headline16StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 7.sp, //14px
+      fontWeight: FontWeight.w400);
+  // p medium    
+  static final headline17StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 7.sp, //14px
+      fontWeight: FontWeight.w500);
+  
+  // s medium
+  static final headline18StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 7.sp, //12px
+      fontWeight: FontWeight.w500);
+
+  // s regular
+  static final headline19StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 7.sp, //12px
+      fontWeight: FontWeight.w400);
+
+  // h2 semibold    
+  static final headline20StyleInter = GoogleFonts.poppins(
+      color: AppColors.appColor000000,
+      fontSize: 7.sp, //30px
+      fontWeight: FontWeight.w600);
+
+
+
+
+  //old -----
   static final headline1StyleArial = TextStyle(
       fontFamily: "Arial",
       color: AppColors.appColorFFFFFF,

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:plix/helpers/navigation_service.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../constants/app_color.dart';
+import '../../../../constants/app_constants.dart';
 import '../../../../constants/text_font_style.dart';
+import '../../../../helpers/all_routes.dart';
 import '../../../../helpers/ui_helpers.dart';
-import '../../../../networks/api_acess.dart';
 import '../../../../provider/email.dart';
 import '../../../../widgets/custom_button.dart';
 
@@ -18,94 +20,115 @@ class InsertEmailScreen extends StatefulWidget {
 }
 
 class _InsertEmailScreenState extends State<InsertEmailScreen> {
-  bool validation = false;
-  final _formKey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController reTypePasswordController = TextEditingController();
+  TextEditingController vcodeController = TextEditingController();
+
+  final _formKey = GlobalKey<FormState>();
+
+  bool validation = false;
+  bool pwsecure = true;
+  bool repwsecure = true;
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    EmailProvider emailProvider =
-        Provider.of<EmailProvider>(context, listen: false);
     return Scaffold(
-      appBar: AppBar(title: Text("Forgot your password".tr), centerTitle: true),
+      backgroundColor: Colors.white,
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: .05.sw),
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+        child: SingleChildScrollView(
+          child: Column(
             children: [
-              UIHelper.verticalSpaceMedium,
-              Text(
-                'Insert Your Email'.tr,
-                style: TextFontStyle.headline2StyleInter
-                    .copyWith(color: AppColors.appColorF4A4A4A),
+              UIHelper.verticalSpaceLarge,
+              UIHelper.verticalSpaceLarge,
+              Image.asset(AssetIcons.splash, height: .18.sh, width: .18.sh),
+              Column(
+                children: <Widget>[
+                  Text(
+                    "Forget Password",
+                    style: TextFontStyle.headline5StyleInter,
+                  ),
+                  UIHelper.verticalSpaceSmall,
+                  Text(
+                    "Dolor sit amet consectetur Lacus \n  convallis sem risus .",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: AppColors.text40,
+                    ),
+                  ),
+                  UIHelper.verticalSpaceSmall,
+                  Container(
+                    width: 30.0,
+                    decoration: BoxDecoration(
+                        border: Border(
+                            bottom: BorderSide(
+                      color: AppColors.primeryColor,
+                      width: 3.0,
+                    ))),
+                  ),
+                  UIHelper.verticalSpaceMedium,
+                ],
               ),
-              UIHelper.verticalSpaceSmall,
               Form(
                 key: _formKey,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    //For Email
+                  children: <Widget>[
+                    // email
+                    Text(
+                      "Email",
+                      style: TextStyle(color: AppColors.text40),
+                    ),
+                    UIHelper.verticalSpaceSmall,
                     TextFormField(
-                      autovalidateMode: validation
-                          ? AutovalidateMode.always
-                          : AutovalidateMode.disabled,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Email Can\'t be empty'.tr;
-                        }
-                        return null;
-                      },
-                      controller: emailController,
                       keyboardType: TextInputType.emailAddress,
-                      style: TextStyle(
-                        letterSpacing: 1.5,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
-                        fontStyle: FontStyle.normal,
-                        color: AppColors.headLine2Color,
-                      ),
                       decoration: InputDecoration(
-                        hintText: 'Enter your email'.tr,
-                        hintStyle: TextFontStyle.headline5StyleInter
-                            .copyWith(color: AppColors.appColor9B9B9B),
-                        labelText: 'Email'.tr,
-                        labelStyle: TextFontStyle.headline5StyleInter
-                            .copyWith(color: AppColors.appColorF4A4A4A),
-                        errorStyle: TextStyle(
-                          letterSpacing: 1,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w400,
-                          fontStyle: FontStyle.normal,
-                          color: AppColors.warningColor,
-                        ),
+                        hintText: "Enter Email",
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                width: 1.0, color: AppColors.text20)),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: AppColors.text20)),
                       ),
                     ),
                     UIHelper.verticalSpaceMedium,
                   ],
                 ),
               ),
-              UIHelper.verticalSpaceMedium,
+              UIHelper.verticalSpaceSmall,
               customeButton(
-                name: 'Next'.tr,
+                name: 'Send',
                 height: .065.sh,
                 minWidth: double.infinity,
                 borderRadius: 5.r,
-                color: AppColors.inactiveColor,
-                textStyle: TextFontStyle.headline4StyleInter
-                    .copyWith(color: AppColors.appColor4D3E39),
+                color: AppColors.primeryColor,
+                textStyle: TextFontStyle.headline5StyleInter
+                    .copyWith(color: AppColors.white),
                 context: context,
                 onCallBack: () async {
-                  if (_formKey.currentState!.validate()) {
-                    await postForgetEmailRXObj.postForgetEmail(
-                        email: emailController.text);
-                    emailProvider.changeemail(emailController.text);
-                  }
-
-                  // NavigationService.popAndReplace(Routes.logInScreen);
+                  NavigationService.navigateToReplacement(
+                      Routes.naviGationScreen);
                 },
               ),
-            ]),
+              UIHelper.verticalSpaceLarge,
+              UIHelper.verticalSpaceLarge,
+              UIHelper.verticalSpaceLarge,
+              Text(
+                "(c) 2022 Codemen. All Rights Reserved.",
+                style: TextStyle(
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.w300,
+                    color: AppColors.text40),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:plix/constants/text_font_style.dart';
+import 'package:plix/helpers/ui_helpers.dart';
 import '/constants/app_color.dart';
 
 import 'constants/app_constants.dart';
@@ -14,16 +16,37 @@ class WelcomeScreen extends StatelessWidget {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: const BoxDecoration(color: AppColors.appColorEDBB43),
+        decoration: const BoxDecoration(color: AppColors.primeryColor),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              SizedBox(
-                height: 40.h,
+              UIHelper.verticalSpaceExtraLarge,
+              UIHelper.verticalSpaceExtraLarge,
+              UIHelper.verticalSpaceExtraLarge,
+              Image.asset(AssetIcons.splashScreen),
+              UIHelper.verticalSpaceExtraLarge,
+              UIHelper.verticalSpaceExtraLarge,
+              UIHelper.verticalSpaceExtraLarge,
+              Container(
+                width: 140.0,
+                decoration: BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(
+                  color: AppColors.white,
+                  width: 1.0,
+                ))),
               ),
-              Image.asset(AssetIcons.splash),
-              SizedBox(
-                height: 20.h,
+              UIHelper.verticalSpaceSmall,
+              Text("From", style: TextFontStyle.headline14StyleInter.copyWith(color: AppColors.white),),
+              UIHelper.verticalSpaceSmall,
+              Text("CODEMEN", style: TextFontStyle.headline14StyleInter.copyWith(color: AppColors.white),),
+              UIHelper.verticalSpaceSmall,
+              Text(
+                "(c) 2022 Codemen. All Rights Reserved.",
+                style: TextStyle(
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.w300,
+                    color: AppColors.white),
               ),
             ]),
       ),
