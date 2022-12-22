@@ -15,7 +15,7 @@ class AppColors {
 
   // font color
   static const Color appColor000000 = Color(0xFF000000);
-  
+
   //text
   static const Color text100 = Color(0xFF2B2B2B);
   static const Color text80 = Color(0xFF434343);
@@ -91,18 +91,18 @@ class AppColors {
   // static const Color drawerLineColor = Color(0xFFEDF5F3);
 
   static const MaterialColor kToDark = MaterialColor(
-    0xFF4d3e39, // 0% comes in here, this will be color picked if no shade is selected when defining a Color property which doesn’t require a swatch.
+    0xFF5D5FEF, // 0% comes in here, this will be color picked if no shade is selected when defining a Color property which doesn’t require a swatch.
     <int, Color>{
-      50: Color(0xFF4d3e39), //10%
-      100: Color(0xFF4d3e39), //20%
-      200: Color(0xFF4d3e39), //30%
-      300: Color(0xFF4d3e39), //40%
-      400: Color(0xFF4d3e39), //50%
-      500: Color(0xFF4d3e39), //60%
-      600: Color(0xFF4d3e39), //70%
-      700: Color(0xFF4d3e39), //80%
-      800: Color(0xFF4d3e39), //80%
-      900: Color(0xFF4d3e39), //80%
+      50: Color(0xFF5D5FEF), //10%
+      100: Color(0xFF5D5FEF), //20%
+      200: Color(0xFF5D5FEF), //30%
+      300: Color(0xFF5D5FEF), //40%
+      400: Color(0xFF5D5FEF), //50%
+      500: Color(0xFF5D5FEF), //60%
+      600: Color(0xFF5D5FEF), //70%
+      700: Color(0xFF5D5FEF), //80%
+      800: Color(0xFF5D5FEF), //80%
+      900: Color(0xFF5D5FEF), //80%
     },
   );
 }

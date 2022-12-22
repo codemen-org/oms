@@ -10,9 +10,10 @@ class CustomTheme {
       // dividerTheme: const DividerThemeData(
       //   color: AppColors.deviderColor,
       // ),
-      primaryColor: AppColors.appColor4D3E39,
+      primaryColor: AppColors.primeryColor,
       primarySwatch: AppColors.kToDark,
       scaffoldBackgroundColor: AppColors.appColorFF6F6F6,
+
       //fontFamily: 'Montserrat',
       // textTheme: TextTheme(
       //   //  final head1 = Theme.of(context).textTheme.headline1;
