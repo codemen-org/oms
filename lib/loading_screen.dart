@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:plix/features/profile/presentation/about_screen.dart';
+import 'package:plix/features/profile/presentation/information_screen.dart';
+import 'package:plix/features/profile/presentation/leave_details_screen.dart';
+import 'package:plix/features/profile/presentation/leave_request_screen.dart';
+import 'package:plix/features/profile/presentation/social_screen.dart';
 import 'package:plix/helpers/helper.dart';
 
 import 'helpers/notification_service.dart';
@@ -56,7 +61,7 @@ class _LoadingState extends State<Loading> {
     } else {
       return appData.read(kKeyIsLoggedIn)
           ? const NavigationScreen()
-          : const LogeinScreen();
+          : const LeaveReqScreen();
     }
   }
 }

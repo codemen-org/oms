@@ -21,7 +21,7 @@ class DrawerTileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: AppColors.appColor2C303E,
+      color: AppColors.white,
       child: InkWell(
         onTap: onTap,
         child: SizedBox(

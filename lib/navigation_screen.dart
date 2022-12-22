@@ -259,7 +259,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
         items: [
           CustomNavigationBarItem(
             icon: SvgPicture.asset(
-              AssetIcons.home,
+              AssetIcons.add,
               color: (_currentIndex == 0)
                   ? AppColors.appColorFFFFFF
                   : AppColors.appColorEDBB43,
@@ -309,7 +309,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
           ),
           CustomNavigationBarItem(
             icon: SvgPicture.asset(
-              AssetIcons.profile,
+              AssetIcons.add,
               color: (_currentIndex == 3)
                   ? AppColors.appColorFFFFFF
                   : AppColors.appColorEDBB43,
