@@ -58,7 +58,7 @@ class _LogeinScreenState extends State<LogeinScreen> {
                 children: <Widget>[
                   Text(
                     "Sign In",
-                    style: TextFontStyle.headline5StyleInter,
+                    style: TextFontStyle.headline9StyleInter.copyWith(color: AppColors.text80),
                   ),
                   UIHelper.verticalSpaceSmall,
                   Text(
@@ -90,7 +90,7 @@ class _LogeinScreenState extends State<LogeinScreen> {
                     // email
                     Text(
                       "Email",
-                      style: TextStyle(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
@@ -107,6 +107,7 @@ class _LogeinScreenState extends State<LogeinScreen> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: "Enter Email",
+                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 width: 1.0, color: AppColors.text20)),
@@ -119,7 +120,7 @@ class _LogeinScreenState extends State<LogeinScreen> {
                     //passwords
                     Text(
                       "Password",
-                      style: TextStyle(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
@@ -136,6 +137,7 @@ class _LogeinScreenState extends State<LogeinScreen> {
                       obscureText: !visibility,
                       decoration: InputDecoration(
                         hintText: "Enter Password",
+                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                         suffixIcon: IconButton(
                           color: AppColors.text60,
                           onPressed: () {
@@ -219,8 +221,7 @@ class _LogeinScreenState extends State<LogeinScreen> {
                   // }
                 },
               ),
-              UIHelper.verticalSpaceLarge,
-              UIHelper.verticalSpaceLarge,
+              UIHelper.verticalSpaceSemiLarge,
               Text(
                 "(c) 2022 Codemen. All Rights Reserved.",
                 style: TextStyle(

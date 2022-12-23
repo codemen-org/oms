@@ -56,7 +56,7 @@ class _ForgotPWScreenState extends State<ForgotPWScreen> {
                 children: <Widget>[
                   Text(
                     "Change Password ",
-                    style: TextFontStyle.headline5StyleInter,
+                    style: TextFontStyle.headline9StyleInter.copyWith(color: AppColors.text80),
                   ),
                   UIHelper.verticalSpaceSmall,
                   Text(
@@ -88,13 +88,14 @@ class _ForgotPWScreenState extends State<ForgotPWScreen> {
                     //passwords
                     Text(
                       "Current Password",
-                      style: TextStyle(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
                       obscureText: !visibility,
                       decoration: InputDecoration(
                         hintText: "Enter Password",
+                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                         suffixIcon: IconButton(
                           color: AppColors.text60,
                           onPressed: () {
@@ -117,13 +118,14 @@ class _ForgotPWScreenState extends State<ForgotPWScreen> {
                     UIHelper.verticalSpaceMedium,
                     Text(
                       "New Password",
-                      style: TextStyle(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
                       obscureText: !visibility1,
                       decoration: InputDecoration(
                         hintText: "Enter Password",
+                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                         suffixIcon: IconButton(
                           color: AppColors.text60,
                           onPressed: () {
@@ -147,13 +149,14 @@ class _ForgotPWScreenState extends State<ForgotPWScreen> {
                     UIHelper.verticalSpaceSmall,
                     Text(
                       "Confirm Password",
-                      style: TextStyle(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
                       obscureText: !visibility2,
                       decoration: InputDecoration(
                         hintText: "Enter Password",
+                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                         suffixIcon: IconButton(
                           color: AppColors.text60,
                           onPressed: () {

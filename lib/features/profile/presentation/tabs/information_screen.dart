@@ -48,7 +48,7 @@ class _InformationScreenState extends State<InformationScreen> {
                     // email
                     Text(
                       "Name",
-                      style: TextStyle(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
@@ -64,7 +64,7 @@ class _InformationScreenState extends State<InformationScreen> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: "Enter name",
-                        hintStyle: TextStyle(color: AppColors.text40),
+                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 width: 1.0, color: AppColors.text20)),
@@ -75,7 +75,7 @@ class _InformationScreenState extends State<InformationScreen> {
                     UIHelper.verticalSpaceMedium,
                     Text(
                       "Email",
-                      style: TextStyle(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
@@ -91,7 +91,7 @@ class _InformationScreenState extends State<InformationScreen> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: "Enter email",
-                        hintStyle: TextStyle(color: AppColors.text40),
+                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 width: 1.0, color: AppColors.text20)),
@@ -102,7 +102,7 @@ class _InformationScreenState extends State<InformationScreen> {
                     UIHelper.verticalSpaceMedium,
                     Text(
                       "User Name",
-                      style: TextStyle(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
@@ -118,7 +118,7 @@ class _InformationScreenState extends State<InformationScreen> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: "Enter username",
-                        hintStyle: TextStyle(color: AppColors.text40),
+                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 width: 1.0, color: AppColors.text20)),
@@ -129,7 +129,7 @@ class _InformationScreenState extends State<InformationScreen> {
                     UIHelper.verticalSpaceMedium,
                     Text(
                       "Phone",
-                      style: TextStyle(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
@@ -145,7 +145,7 @@ class _InformationScreenState extends State<InformationScreen> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: "Enter phone",
-                        hintStyle: TextStyle(color: AppColors.text40),
+                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 width: 1.0, color: AppColors.text20)),
@@ -156,7 +156,7 @@ class _InformationScreenState extends State<InformationScreen> {
                     UIHelper.verticalSpaceMedium,
                     Text(
                       "Guardian Name",
-                      style: TextStyle(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
@@ -172,7 +172,7 @@ class _InformationScreenState extends State<InformationScreen> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: "Enter name",
-                        hintStyle: TextStyle(color: AppColors.text40),
+                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 width: 1.0, color: AppColors.text20)),
@@ -183,7 +183,7 @@ class _InformationScreenState extends State<InformationScreen> {
                     UIHelper.verticalSpaceMedium,
                     Text(
                       "Guardian Relation",
-                      style: TextStyle(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
@@ -199,7 +199,7 @@ class _InformationScreenState extends State<InformationScreen> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: "Enter relation",
-                        hintStyle: TextStyle(color: AppColors.text40),
+                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 width: 1.0, color: AppColors.text20)),
@@ -210,7 +210,7 @@ class _InformationScreenState extends State<InformationScreen> {
                     UIHelper.verticalSpaceMedium,
                     Text(
                       "Guardian Mobile",
-                      style: TextStyle(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
@@ -226,7 +226,7 @@ class _InformationScreenState extends State<InformationScreen> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: "Enter mobile",
-                        hintStyle: TextStyle(color: AppColors.text40),
+                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 width: 1.0, color: AppColors.text20)),
@@ -237,7 +237,7 @@ class _InformationScreenState extends State<InformationScreen> {
                     UIHelper.verticalSpaceMedium,
                     Text(
                       "About",
-                      style: TextStyle(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
@@ -254,7 +254,7 @@ class _InformationScreenState extends State<InformationScreen> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: "Describe",
-                        hintStyle: TextStyle(color: AppColors.text40),
+                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 width: 1.0, color: AppColors.text20)),

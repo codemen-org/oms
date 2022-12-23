@@ -60,14 +60,14 @@ class _ProfileEditScreenState extends State<ProfileEditScreen>
             labelColor: AppColors.primeryColor,
             tabs: <Widget>[
               Text(
-                "Information",
+                "Information", style: TextFontStyle.headline7StyleInter.copyWith(color: AppColors.text80),
               ),
               Text(
-                "Social",
+                "Social", style: TextFontStyle.headline7StyleInter.copyWith(color: AppColors.text80),
                 textAlign: TextAlign.center,
               ),
               Text(
-                "About",
+                "About", style: TextFontStyle.headline7StyleInter.copyWith(color: AppColors.text80),
               ),
             ],
           ),

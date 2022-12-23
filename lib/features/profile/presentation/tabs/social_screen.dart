@@ -42,7 +42,7 @@ class _SocialScreenState extends State<SocialScreen> {
                   children: <Widget>[
                     Text(
                       "Facebook",
-                      style: TextStyle(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
@@ -58,7 +58,7 @@ class _SocialScreenState extends State<SocialScreen> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: "Url:",
-                        hintStyle: TextStyle(color: AppColors.text40),
+                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 width: 1.0, color: AppColors.text20)),
@@ -69,7 +69,7 @@ class _SocialScreenState extends State<SocialScreen> {
                     UIHelper.verticalSpaceMedium,
                     Text(
                       "Twitter",
-                      style: TextStyle(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
@@ -85,7 +85,7 @@ class _SocialScreenState extends State<SocialScreen> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: "Url:",
-                        hintStyle: TextStyle(color: AppColors.text40),
+                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 width: 1.0, color: AppColors.text20)),
@@ -96,7 +96,7 @@ class _SocialScreenState extends State<SocialScreen> {
                     UIHelper.verticalSpaceMedium,
                     Text(
                       "Github",
-                      style: TextStyle(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
@@ -112,7 +112,7 @@ class _SocialScreenState extends State<SocialScreen> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: "Url:",
-                        hintStyle: TextStyle(color: AppColors.text40),
+                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 width: 1.0, color: AppColors.text20)),

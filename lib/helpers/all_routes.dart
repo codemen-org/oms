@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:plix/features/authentication/presentation/login/login_screen.dart';
 import 'package:plix/features/address/presentation/address_screen.dart';
+import 'package:plix/features/leaverequest/presentation/leave_details_screen.dart';
 import 'package:plix/features/product/presentation/product_detail_screen.dart';
 import 'package:plix/widgets/app_drawer.dart';
 
@@ -33,6 +34,7 @@ class Routes {
   static const String profileEditScreen = '/ProfileEditScreen';
   static const String dashBoardMainScreen = '/DashBoardMainScreen';
   static const String leaveReqScreen = '/LeaveReqScreen';
+  static const String leaveDetailesScreen = '/leaveDetailesScreen';
   static const String searchScreen = '/SearchScreen';
 
   static const String productDetailScreen = '/ProductDetailScreen';
@@ -103,6 +105,13 @@ class RouteGenerator {
                 settings:
                     settings) //_FadedTransitionRoute(builder: (context)=> const SobrenosScreen())
             : CupertinoPageRoute(builder: (context) => const LeaveReqScreen());
+      case Routes.leaveDetailesScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const LeavedetailsScreen(),
+                settings:
+                    settings) //_FadedTransitionRoute(builder: (context)=> const SobrenosScreen())
+            : CupertinoPageRoute(builder: (context) => const LeavedetailsScreen());
       case Routes.searchScreen:
         return Platform.isAndroid
             ? _FadedTransitionRoute(

@@ -21,9 +21,10 @@ class LeaveReqScreen extends StatefulWidget {
 }
 
 class _LeaveReqScreenState extends State<LeaveReqScreen> {
+  int? _value;
   String radioValue = "";
   DateTime? _dateTime;
-  TimeOfDay? _timeOfDay;
+  DateTime? _dateTime1;
 
   getDate() async {
     DateTime? date = await showDatePicker(
@@ -33,6 +34,17 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
         lastDate: DateTime(DateTime.now().year + 2));
     setState(() {
       _dateTime = date;
+    });
+  }
+
+  getDate1() async {
+    DateTime? date1 = await showDatePicker(
+        context: context,
+        initialDate: DateTime(DateTime.now().year),
+        firstDate: DateTime(DateTime.now().year - 20),
+        lastDate: DateTime(DateTime.now().year + 2));
+    setState(() {
+      _dateTime1 = date1;
     });
   }
 
@@ -64,10 +76,10 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Leave Request"),
+        title: Text("Leave Request", style: TextFontStyle.headline9StyleInter.copyWith(color: AppColors.white),),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 40.0),
+        padding: const EdgeInsets.only(top: 10.0),
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: .05.sw),
           child: SingleChildScrollView(
@@ -77,13 +89,12 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                 Form(
                   key: _formKey,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       // email
                       Text(
                         "Name",
-                        style: TextStyle(color: AppColors.text40),
+                        style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                       ),
                       UIHelper.verticalSpaceSmall,
                       TextFormField(
@@ -99,6 +110,7 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           hintText: "Enter name",
+                          hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                   width: 1.0, color: AppColors.text20)),
@@ -109,7 +121,7 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                       UIHelper.verticalSpaceMedium,
                       Text(
                         "Leave Type",
-                        style: TextStyle(color: AppColors.text40),
+                        style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                       ),
                       UIHelper.verticalSpaceSmall,
                       TextFormField(
@@ -125,6 +137,7 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           hintText: "Enter name",
+                          hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                   width: 1.0, color: AppColors.text20)),
@@ -135,7 +148,7 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                       UIHelper.verticalSpaceMedium,
                       Text(
                         "Start Date",
-                        style: TextStyle(color: AppColors.text40),
+                        style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                       ),
                       UIHelper.verticalSpaceSmall,
                       TextFormField(
@@ -152,7 +165,8 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                         decoration: InputDecoration(
                           hintText: _dateTime == null
                               ? "00-00-0000"
-                              : "Date : ${_dateTime?.year} - ${_dateTime?.month} - ${_dateTime?.day}",
+                              : "${_dateTime?.year} - ${_dateTime?.month} - ${_dateTime?.day}",
+                              hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                           suffixIcon: IconButton(
                             icon: Icon(
                               Icons.calendar_month,
@@ -172,7 +186,7 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                       UIHelper.verticalSpaceMedium,
                       Text(
                         "End Date",
-                        style: TextStyle(color: AppColors.text40),
+                        style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                       ),
                       UIHelper.verticalSpaceSmall,
                       TextFormField(
@@ -187,16 +201,17 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                         },
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
-                          hintText: _dateTime == null
+                          hintText: _dateTime1 == null
                               ? "00-00-0000"
-                              : "Date : ${_dateTime?.year} - ${_dateTime?.month} - ${_dateTime?.day}",
+                              : "${_dateTime1?.year} - ${_dateTime1?.month} - ${_dateTime1?.day}",
+                              hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                           suffixIcon: IconButton(
                             icon: Icon(
                               Icons.calendar_month,
                               color: AppColors.text60,
                             ),
                             onPressed: () async {
-                              getDate();
+                              getDate1();
                             },
                           ),
                           enabledBorder: OutlineInputBorder(
@@ -209,7 +224,7 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                       UIHelper.verticalSpaceMedium,
                       Text(
                         "Reason",
-                        style: TextStyle(color: AppColors.text40),
+                        style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                       ),
                       UIHelper.verticalSpaceSmall,
                       TextFormField(
@@ -226,6 +241,7 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           hintText: "Describe",
+                          hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                   width: 1.0, color: AppColors.text20)),
@@ -234,15 +250,72 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                         ),
                       ),
                       UIHelper.verticalSpaceMedium,
+                      // Text("Day Off", style: TextStyle(color: AppColors.text40),)
                     ],
                   ),
                 ),
                 UIHelper.verticalSpaceSmall,
-                UIHelper.verticalSpaceSmall,
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.start,
+                //   children: <Widget>[
+                //     Radio(value: 1, groupValue: _value, onChanged: (value){
+                //       setState(() {
+                //         _value = value;
+                //       });
+                //     }),
+                //     Text("Half Day"),
+                //     Radio(value: 2, groupValue: _value, onChanged: (value){
+                //       setState(() {
+                //         _value = value;
+                //       });
+                //     }),
+                //     Text("Full Day"),
+                //   ],
+                // ),
                 Row(
-                  children: <Widget>[],
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Day Off",
+                              style: TextStyle(color: AppColors.text40),
+                            ),
+                          ],
+                        ),
+                        UIHelper.verticalSpaceSmall,
+                        Row(
+                          children: [
+                            Radio(
+                                value: 1,
+                                groupValue: _value,
+                                onChanged: (value) {
+                                  setState(() {
+                                    _value = value;
+                                  });
+                                }),
+                            Text("Half Day"),
+                            UIHelper.horizontalSpaceMedium,
+                            Radio(
+                                value: 2,
+                                groupValue: _value,
+                                onChanged: (value) {
+                                  setState(() {
+                                    _value = value;
+                                  });
+                                }),
+                            Text("Full Day"),
+                          ],
+                        )
+                      ],
+                    ),
+                    UIHelper.horizontalSpaceMedium,
+                  ],
                 ),
-                UIHelper.verticalSpaceSmall,
                 UIHelper.verticalSpaceSmall,
                 customeButton(
                   name: 'Request',
@@ -270,7 +343,6 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                     }
                   },
                 ),
-                UIHelper.verticalSpaceLarge,
                 UIHelper.verticalSpaceLarge,
                 // Text(
                 //   "(c) 2022 Codemen. All Rights Reserved.",

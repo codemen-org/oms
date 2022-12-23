@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plix/constants/app_color.dart';
 import 'package:plix/constants/app_constants.dart';
+import 'package:plix/constants/text_font_style.dart';
 import 'package:plix/helpers/ui_helpers.dart';
 import 'package:plix/widgets/app_drawer.dart';
 
@@ -17,7 +18,7 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
     return Scaffold(
       drawer: AppDrawer(),
       appBar: AppBar(
-        title: Text("App Bar"),
+        title: Text("Leave Details", style: TextFontStyle.headline11StyleInter,),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -25,8 +26,10 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
           children: <Widget>[
             UIHelper.verticalSpaceMedium,
             Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(color: AppColors.text20)),
               color: AppColors.text10,
-              elevation: 5.0,
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Container(
@@ -75,8 +78,10 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
                       ),
                       UIHelper.verticalSpaceMedium,
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Row(
                                 children: [
@@ -94,9 +99,10 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
                           ),
                           UIHelper.horizontalSpaceMedium,
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                "START DATE",
+                                "END DATE",
                                 style: TextStyle(color: AppColors.text40),
                               ),
                               Text(
@@ -107,19 +113,28 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
                           ),
                           UIHelper.horizontalSpaceMedium,
                           UIHelper.horizontalSpaceSmall,
+                          UIHelper.horizontalSpaceSmall,
+                          UIHelper.horizontalSpaceSmall,
                           Column(
                             children: <Widget>[
-                              ElevatedButton(
-                                onPressed: () {},
+                              CircleAvatar(
+                                backgroundColor: AppColors.text20,
                                 child: Text(
-                                  "00",
+                                  "02",
                                   style: TextStyle(color: AppColors.text80),
                                 ),
-                                style: ElevatedButton.styleFrom(
-                                    shape: CircleBorder(), //<-- SEE HERE
-                                    padding: EdgeInsets.all(10),
-                                    backgroundColor: AppColors.text20),
-                              ),
+                              )
+                              // ElevatedButton(
+                              //   onPressed: () {},
+                              //   child: Text(
+                              //     "00",
+                              //     style: TextStyle(color: AppColors.text80),
+                              //   ),
+                              //   style: ElevatedButton.styleFrom(
+                              //       shape: CircleBorder(), //<-- SEE HERE
+                              //       padding: EdgeInsets.all(10),
+                              //       backgroundColor: AppColors.text20),
+                              // ),
                             ],
                           ),
                         ],

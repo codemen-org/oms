@@ -48,7 +48,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       //     shadowColor: AppColors.primeryColor,
       //     bottomOpacity: 0.0,
       //     toolbarOpacity: 0.0,
-      //     leading: AppDrawer(),
+          // leading: AppDrawer(),
       //     elevation: 0.0,
       //     toolbarHeight: .05.sh,
       //     title: Text(
@@ -62,10 +62,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
         children: [
           custome_appbar(),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(left: 20.0, right: 20.0),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text("BIO"),
+              Text("BIO", style: TextFontStyle.headline14StyleInter.copyWith(color: AppColors.text80),),
               UIHelper.verticalSpace(5),
               Container(
                 width: 30.0,
@@ -78,9 +78,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               UIHelper.verticalSpaceSmall,
               Text(
-                  "Biodata format is a simple version of the resume. Biodata forms give a summary of your personal details, educational details."),
+                "Biodata format is a simple version of the resume. Biodata forms give a summary of your personal details, educational details.",
+                style: TextFontStyle.headline15StyleInter
+                    .copyWith(color: AppColors.text60),
+              ),
               UIHelper.verticalSpaceMedium,
-              Text("EMAIL"),
+              Text("EMAIL", style: TextFontStyle.headline14StyleInter.copyWith(color: AppColors.text80),),
               UIHelper.verticalSpace(5),
               Container(
                 width: 30.0,
@@ -92,9 +95,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ))),
               ),
               UIHelper.verticalSpaceSmall,
-              Text("test01@test.com"),
+              Text("test01@test.com",                 style: TextFontStyle.headline15StyleInter
+                    .copyWith(color: AppColors.text60),),
               UIHelper.verticalSpaceMedium,
-              Text("PHONE"),
+              Text("PHONE", style: TextFontStyle.headline14StyleInter.copyWith(color: AppColors.text80),),
               UIHelper.verticalSpace(5),
               Container(
                 width: 30.0,
@@ -106,11 +110,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ))),
               ),
               UIHelper.verticalSpaceSmall,
-              Text("+880 1671 XXXXXX"),
+              Text("+880 1671 XXXXXX",                 style: TextFontStyle.headline15StyleInter
+                    .copyWith(color: AppColors.text60),),
               UIHelper.verticalSpaceMedium,
-              Text("test01@test.com"),
-              UIHelper.verticalSpaceMedium,
-              Text("SOCIAL"),
+              Text("SOCIAL", style: TextFontStyle.headline14StyleInter.copyWith(color: AppColors.text80),),
               UIHelper.verticalSpace(5),
               Container(
                 width: 30.0,
@@ -124,12 +127,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
               UIHelper.verticalSpaceSmall,
               Row(
                 children: [
-                  SvgPicture.asset(AssetIcons.facebook),
+                  SvgPicture.asset(AssetIcons.facebook,color: AppColors.primeryColor),
                   UIHelper.horizontalSpaceSmall,
-                  SvgPicture.asset(AssetIcons.instgram),
+                  SvgPicture.asset(AssetIcons.instgram, color: AppColors.primeryColor,),
                 ],
               ),
-              UIHelper.verticalSpaceMedium,
             ]),
           ),
         ],

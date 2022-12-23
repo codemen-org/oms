@@ -41,7 +41,7 @@ class _DashBoardMainScreenState extends State<DashBoardMainScreen>
       drawer: AppDrawer(),
       appBar: AppBar(
         title: Consumer<AppBarNameProvider>(
-            builder: (context, value, child) => Text(value.name)),
+            builder: (context, value, child) => Text(value.name, style: TextFontStyle.headline11StyleInter,)),
         actions: [
           InkWell(
             onTap: () {
@@ -82,10 +82,10 @@ class _DashBoardMainScreenState extends State<DashBoardMainScreen>
             labelColor: AppColors.primeryColor,
             tabs: <Widget>[
               Text(
-                "Overview",
+                "Overview", style: TextFontStyle.headline7StyleInter.copyWith(color: AppColors.text80),
               ),
               Text(
-                "Total List",
+                "Total List", style: TextFontStyle.headline7StyleInter.copyWith(color: AppColors.text80),
               ),
             ],
           ),

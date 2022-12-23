@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:plix/helpers/helper.dart';
 import '../../../../helpers/ui_helpers.dart';
 import '/constants/app_color.dart';
 import '/constants/text_font_style.dart';
@@ -44,7 +45,6 @@ class _AboutScreenState extends State<AboutScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              UIHelper.verticalSpaceSemiLarge,
               Form(
                 key: _formKey,
                 child: Column(
@@ -54,7 +54,7 @@ class _AboutScreenState extends State<AboutScreen> {
                     UIHelper.verticalSpaceMedium,
                     Text(
                       "About",
-                      style: TextStyle(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
@@ -71,7 +71,7 @@ class _AboutScreenState extends State<AboutScreen> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: "Describe",
-                        hintStyle: TextStyle(color: AppColors.text40),
+                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
                         enabledBorder: OutlineInputBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10.0)),

@@ -43,7 +43,7 @@ class custome_appbar extends StatelessWidget {
                     builder: (context, value, child) => Text(
                       value.name,
                       textAlign: TextAlign.center,
-                      style: TextFontStyle.headline3StyleInter.copyWith(
+                      style: TextFontStyle.headline9StyleInter.copyWith(
                         color: AppColors.appColorFFFFFF,
                       ),
                     ),
@@ -76,9 +76,9 @@ class custome_appbar extends StatelessWidget {
             ],
           ),
         ),
-        Text("John Doe"),
+        Text("John Doe", style: TextFontStyle.headline1StyleInter.copyWith(color: AppColors.text80),),
         UIHelper.verticalSpaceSmall,
-        Text("Full Stack Web Developer @ codemen"),
+        Text("Full Stack Web Developer \n @ codemen", style: TextFontStyle.headline13StyleInter.copyWith(color: AppColors.text60), textAlign: TextAlign.center,),
         UIHelper.verticalSpaceMedium,
       ],
     );

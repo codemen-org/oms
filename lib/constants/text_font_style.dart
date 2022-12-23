@@ -10,8 +10,8 @@ class TextFontStyle {
   //new
   // h semibold
   static final headline1StyleInter = GoogleFonts.poppins(
-      color: AppColors.appColor000000,
-      fontSize: 50.sp, //34px
+      color: AppColors.white,
+      fontSize: 20.sp, //34px
       fontWeight: FontWeight.w600);
   static final headline2StyleInter = GoogleFonts.poppins(
       color: AppColors.appColor000000,
@@ -27,51 +27,51 @@ class TextFontStyle {
       fontWeight: FontWeight.w600);
   static final headline5StyleInter = GoogleFonts.poppins(
       color: AppColors.appColor000000,
-      fontSize: 14.sp, //16px
+      fontSize: 14.sp, //all button style
       fontWeight: FontWeight.w600);
 
   // h medium
   static final headline6StyleInter = GoogleFonts.poppins(
-      color: AppColors.appColor000000,
+      color: AppColors.white,
       fontSize: 12.sp, //34px
       fontWeight: FontWeight.w500);
   static final headline7StyleInter = GoogleFonts.poppins(
       color: AppColors.appColor000000,
-      fontSize: 10.sp, //24px
+      fontSize: 14.sp, //tabbar style text
       fontWeight: FontWeight.w500);
   static final headline8StyleInter = GoogleFonts.poppins(
       color: AppColors.appColor000000,
-      fontSize: 10.sp, //20px
+      fontSize: 8.sp, //used
       fontWeight: FontWeight.w500);
   static final headline9StyleInter = GoogleFonts.poppins(
       color: AppColors.appColor000000,
-      fontSize: 8.sp, //18px
+      fontSize: 16.sp, //Header-Style
       fontWeight: FontWeight.w500);
   static final headline10StyleInter = GoogleFonts.poppins(
       color: AppColors.appColor000000,
-      fontSize: 7.sp, //16px
+      fontSize: 14.sp, //used
       fontWeight: FontWeight.w500);
 
   // h regular    
   static final headline11StyleInter = GoogleFonts.poppins(
-      color: AppColors.appColor000000,
-      fontSize: 7.sp, //34px
+      color: AppColors.white,
+      fontSize: 14.sp, //hinttext style
       fontWeight: FontWeight.w400);
   static final headline12StyleInter = GoogleFonts.poppins(
       color: AppColors.appColor000000,
-      fontSize: 7.sp, //24px
+      fontSize: 12.sp, //text label
       fontWeight: FontWeight.w400);
   static final headline13StyleInter = GoogleFonts.poppins(
       color: AppColors.appColor000000,
-      fontSize: 7.sp, //20px
+      fontSize: 8.sp, //card use
       fontWeight: FontWeight.w400);
   static final headline14StyleInter = GoogleFonts.poppins(
       color: AppColors.appColor000000,
-      fontSize: 7.sp, //18px
+      fontSize: 10.sp, //used
       fontWeight: FontWeight.w400);
   static final headline15StyleInter = GoogleFonts.poppins(
       color: AppColors.appColor000000,
-      fontSize: 7.sp, //16px
+      fontSize: 12.sp, //used
       fontWeight: FontWeight.w400);
 
   // p regular    
