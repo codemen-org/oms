@@ -10,9 +10,11 @@ class DrawerTileWidget extends StatelessWidget {
   final String icon;
   final String title;
   final VoidCallback onTap;
+  Color? color;
 
-  const DrawerTileWidget({
+  DrawerTileWidget({
     Key? key,
+    this.color,
     required this.icon,
     required this.title,
     required this.onTap,
@@ -32,7 +34,7 @@ class DrawerTileWidget extends StatelessWidget {
                 icon,
                 height: 20.sp,
                 width: 20.sp,
-                color: AppColors.appColor000000,
+                color: color ?? AppColors.appColor000000,
               ),
               UIHelper.horizontalSpaceMedium,
               Text(

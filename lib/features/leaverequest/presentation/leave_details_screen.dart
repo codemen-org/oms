@@ -18,7 +18,6 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
       drawer: AppDrawer(),
       appBar: AppBar(
         title: Text("App Bar"),
-        backgroundColor: Colors.red,
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -41,26 +40,37 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
                             backgroundImage: AssetImage(AssetIcons.userImage),
                           ),
                           UIHelper.horizontalSpaceMedium,
-                          Text("Sveltiana", style: TextStyle(color: Colors.black),)
+                          Text(
+                            "Sveltiana",
+                            style: TextStyle(color: Colors.black),
+                          )
                         ],
                       ),
                       UIHelper.verticalSpaceSmall,
                       Row(
                         children: <Widget>[
-                          Text("Casual Leave", style: TextStyle(color: AppColors.text60),),
-
+                          Text(
+                            "Casual Leave",
+                            style: TextStyle(color: AppColors.text60),
+                          ),
                         ],
                       ),
                       UIHelper.verticalSpaceMedium,
                       Row(
                         children: <Widget>[
-                          Text("LEAVE REASON", style: TextStyle(color: AppColors.text40),)
+                          Text(
+                            "LEAVE REASON",
+                            style: TextStyle(color: AppColors.text40),
+                          )
                         ],
                       ),
                       UIHelper.verticalSpaceSmall,
                       Row(
                         children: <Widget>[
-                          Text("Biodata format is a simple version of the \n resume. Biodata forms give a summary of \n your personal details. Biodata format is a \n simple version of the resume. Biodata forms \n give a summary of your personal details.", style: TextStyle(color: AppColors.text60),)
+                          Text(
+                            "Biodata format is a simple version of the \n resume. Biodata forms give a summary of \n your personal details. Biodata format is a \n simple version of the resume. Biodata forms \n give a summary of your personal details.",
+                            style: TextStyle(color: AppColors.text60),
+                          )
                         ],
                       ),
                       UIHelper.verticalSpaceMedium,
@@ -70,20 +80,29 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
                             children: <Widget>[
                               Row(
                                 children: [
-
-                              Text("START DATE", style: TextStyle(color: AppColors.text40),),
+                                  Text(
+                                    "START DATE",
+                                    style: TextStyle(color: AppColors.text40),
+                                  ),
                                 ],
                               ),
-                              
-                              Text("12 Dec 12:00PM", style: TextStyle(color: AppColors.text60),),
+                              Text(
+                                "12 Dec 12:00PM",
+                                style: TextStyle(color: AppColors.text60),
+                              ),
                             ],
                           ),
                           UIHelper.horizontalSpaceMedium,
                           Column(
                             children: <Widget>[
-                              Text("START DATE", style: TextStyle(color: AppColors.text40),),
-                              
-                              Text("12 Dec 12:00PM", style: TextStyle(color: AppColors.text60),),
+                              Text(
+                                "START DATE",
+                                style: TextStyle(color: AppColors.text40),
+                              ),
+                              Text(
+                                "12 Dec 12:00PM",
+                                style: TextStyle(color: AppColors.text60),
+                              ),
                             ],
                           ),
                           UIHelper.horizontalSpaceMedium,
@@ -92,12 +111,14 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
                             children: <Widget>[
                               ElevatedButton(
                                 onPressed: () {},
-                                child: Text("00", style: TextStyle(color: AppColors.text80),),
-                                style: ElevatedButton.styleFrom(
-                                  shape: CircleBorder(), //<-- SEE HERE
-                                  padding: EdgeInsets.all(10),
-                                  backgroundColor: AppColors.text20
+                                child: Text(
+                                  "00",
+                                  style: TextStyle(color: AppColors.text80),
                                 ),
+                                style: ElevatedButton.styleFrom(
+                                    shape: CircleBorder(), //<-- SEE HERE
+                                    padding: EdgeInsets.all(10),
+                                    backgroundColor: AppColors.text20),
                               ),
                             ],
                           ),
@@ -106,7 +127,7 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
                     ],
                   ),
                 ),
-              ),  
+              ),
             ),
           ],
         ),

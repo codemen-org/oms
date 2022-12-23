@@ -1,30 +1,40 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
-import 'package:plix/navigation_screen.dart';
+
 import 'package:plix/features/authentication/presentation/login/login_screen.dart';
 import 'package:plix/features/address/presentation/address_screen.dart';
 import 'package:plix/features/product/presentation/product_detail_screen.dart';
+import 'package:plix/widgets/app_drawer.dart';
 
 import '../features/authentication/presentation/forget_pw/forget_pw_screen.dart';
 import '../features/authentication/presentation/forget_pw/insertmail_screen.dart';
 import '../features/authentication/presentation/signup/verifyotp/otp.dart';
-import '../features/cart/presentation/time_slot.dart';
-import '../features/cart/presentation/time_slot.dart';
+
 import '../features/categories/presentation/category_search_screen.dart';
 import '../features/checkout/presentation/payment_option.dart';
 import '../features/authentication/presentation/signup/signup_screen.dart';
-import '../features/dashboard/presentation/slider_webview.dart';
-import '../features/order_history/presentation/order_details_screen.dart';
+
+import '../features/dashboard/presentation/dashboard_main_screen.dart';
+import '../features/dashboard/presentation/tabs/dashboard_screen.dart';
+import '../features/leaverequest/presentation/leave_request_screen.dart';
 import '../features/order_history/presentation/order_history_screen.dart';
+import '../features/profile/presentation/profile_edit_screen.dart';
 import '../features/profile/presentation/profle_screen.dart';
+import '../features/show_all_search/presentation/show_all.dart';
 import '../loading_screen.dart';
-import '../features/dashboard/presentation/home_screen.dart';
 
 class Routes {
   static const String logInScreen = '/logIn';
   static const String signUpScreen = '/signUp';
+  static const String appDrawer = '/drawer';
+  static const String dashBoard = '/dashBoard';
   static const String home = '/home';
   static const String profileScreen = '/profileScreen';
+  static const String profileEditScreen = '/ProfileEditScreen';
+  static const String dashBoardMainScreen = '/DashBoardMainScreen';
+  static const String leaveReqScreen = '/LeaveReqScreen';
+  static const String searchScreen = '/SearchScreen';
+
   static const String productDetailScreen = '/ProductDetailScreen';
   static const String addressScreen = '/assdessScreen';
   static const String paymentScreen = '/paymentScreen';
@@ -43,20 +53,26 @@ class Routes {
 class RouteGenerator {
   static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case Routes.home:
-        return Platform.isAndroid
-            ? _FadedTransitionRoute(widget: HomeScreen(), settings: settings)
-            : CupertinoPageRoute(builder: (context) => HomeScreen());
       case Routes.signUpScreen:
         return Platform.isAndroid
             ? _FadedTransitionRoute(
                 widget: const SignUpScreen(), settings: settings)
             : CupertinoPageRoute(builder: (context) => const SignUpScreen());
+      case Routes.appDrawer:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const AppDrawer(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => const AppDrawer());
       case Routes.logInScreen:
         return Platform.isAndroid
             ? _FadedTransitionRoute(
                 widget: const LogeinScreen(), settings: settings)
             : CupertinoPageRoute(builder: (context) => const LogeinScreen());
+      case Routes.dashBoard:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const DashboardScreen(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => const DashboardScreen());
       case Routes.loadingScreen:
         return Platform.isAndroid
             ? _FadedTransitionRoute(
@@ -64,6 +80,36 @@ class RouteGenerator {
                 settings:
                     settings) //_FadedTransitionRoute(builder: (context)=> const SobrenosScreen())
             : CupertinoPageRoute(builder: (context) => const Loading());
+      case Routes.dashBoardMainScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const DashBoardMainScreen(),
+                settings:
+                    settings) //_FadedTransitionRoute(builder: (context)=> const SobrenosScreen())
+            : CupertinoPageRoute(
+                builder: (context) => const DashBoardMainScreen());
+      case Routes.profileEditScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const ProfileEditScreen(),
+                settings:
+                    settings) //_FadedTransitionRoute(builder: (context)=> const SobrenosScreen())
+            : CupertinoPageRoute(
+                builder: (context) => const ProfileEditScreen());
+      case Routes.leaveReqScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const LeaveReqScreen(),
+                settings:
+                    settings) //_FadedTransitionRoute(builder: (context)=> const SobrenosScreen())
+            : CupertinoPageRoute(builder: (context) => const LeaveReqScreen());
+      case Routes.searchScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const SearchScreen(),
+                settings:
+                    settings) //_FadedTransitionRoute(builder: (context)=> const SobrenosScreen())
+            : CupertinoPageRoute(builder: (context) => const SearchScreen());
       case Routes.productDetailScreen:
         return Platform.isAndroid
             ? _FadedTransitionRoute(
@@ -92,12 +138,7 @@ class RouteGenerator {
                 settings: settings)
             : CupertinoPageRoute(
                 builder: (context) => PaymentScreen(orderID: args["orderID"]));
-      case Routes.naviGationScreen:
-        return Platform.isAndroid
-            ? _FadedTransitionRoute(
-                widget: const NavigationScreen(), settings: settings)
-            : CupertinoPageRoute(
-                builder: (context) => const NavigationScreen());
+
       case Routes.categorySearch:
         final args = settings.arguments as Map;
         return Platform.isAndroid
@@ -138,13 +179,7 @@ class RouteGenerator {
                 settings:
                     settings) //_FadedTransitionRoute(builder: (context)=> const SobrenosScreen())
             : CupertinoPageRoute(builder: (context) => ForgotPWScreen());
-      case Routes.cartBottomSheet:
-        return Platform.isAndroid
-            ? _FadedTransitionRoute(
-                widget: CartBottomSheet(),
-                settings:
-                    settings) //_FadedTransitionRoute(builder: (context)=> const SobrenosScreen())
-            : CupertinoPageRoute(builder: (context) => CartBottomSheet());
+
       // case Routes.orderDetailsScreen:
       //   return Platform.isAndroid
       //       ? _FadedTransitionRoute(
@@ -152,17 +187,6 @@ class RouteGenerator {
       //           settings:
       //               settings) //_FadedTransitionRoute(builder: (context)=> const SobrenosScreen())
       //       : CupertinoPageRoute(builder: (context) => OrderDetailsScreen());
-      case Routes.sliderWebViewPage:
-        final args = settings.arguments as Map;
-        return Platform.isAndroid
-            ? _FadedTransitionRoute(
-                widget:
-                    SliderWebViewPage(title: args["title"], url: args["url"]),
-                settings:
-                    settings) //_FadedTransitionRoute(builder: (context)=> const SobrenosScreen())
-            : CupertinoPageRoute(
-                builder: (context) =>
-                    SliderWebViewPage(title: args["title"], url: args["url"]));
 
       default:
         return null;

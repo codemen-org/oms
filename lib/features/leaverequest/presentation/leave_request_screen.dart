@@ -5,11 +5,11 @@ import 'package:get/get.dart';
 import 'package:plix/helpers/all_routes.dart';
 import 'package:plix/helpers/navigation_service.dart';
 import 'package:plix/widgets/app_drawer.dart';
-import '../../../../helpers/helper.dart';
+import '../../../helpers/helper.dart';
 import '/constants/app_color.dart';
 import '/constants/app_constants.dart';
 import '/constants/text_font_style.dart';
-import '../../../../helpers/ui_helpers.dart';
+import '../../../helpers/ui_helpers.dart';
 import '/networks/api_acess.dart';
 import '/widgets/custom_button.dart';
 
@@ -21,7 +21,6 @@ class LeaveReqScreen extends StatefulWidget {
 }
 
 class _LeaveReqScreenState extends State<LeaveReqScreen> {
-
   String radioValue = "";
   DateTime? _dateTime;
   TimeOfDay? _timeOfDay;
@@ -65,7 +64,6 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.red,
         title: Text("Leave Request"),
       ),
       body: Padding(
@@ -242,8 +240,7 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                 UIHelper.verticalSpaceSmall,
                 UIHelper.verticalSpaceSmall,
                 Row(
-                  children: <Widget>[
-                  ],
+                  children: <Widget>[],
                 ),
                 UIHelper.verticalSpaceSmall,
                 UIHelper.verticalSpaceSmall,

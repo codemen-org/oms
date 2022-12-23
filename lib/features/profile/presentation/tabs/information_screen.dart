@@ -1,12 +1,13 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:plix/helpers/all_routes.dart';
 import 'package:plix/helpers/navigation_service.dart';
-import '../../../../helpers/helper.dart';
+
+import '../../../../helpers/ui_helpers.dart';
 import '/constants/app_color.dart';
 import '/constants/app_constants.dart';
 import '/constants/text_font_style.dart';
-import '../../../../helpers/ui_helpers.dart';
+
 import '/networks/api_acess.dart';
 import '/widgets/custom_button.dart';
 
@@ -27,7 +28,6 @@ class _InformationScreenState extends State<InformationScreen> {
   bool visibility = false;
   bool isSwitched = false;
 
-
   bool pwsecure = true;
   @override
   Widget build(BuildContext context) {
@@ -38,9 +38,7 @@ class _InformationScreenState extends State<InformationScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
-                height: 300.0,
-              ),
+              UIHelper.verticalSpaceSemiLarge,
               Form(
                 key: _formKey,
                 child: Column(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'app_color.dart';
 
@@ -61,19 +62,18 @@ class CustomTheme {
       // ),
 
       //AppBar Theme
-      // appBarTheme: AppBarTheme(
+      appBarTheme: AppBarTheme(
+        // backgroundColor: Colors.black,
+        color: AppColors.primeryColor,
+        elevation: 2,
+        centerTitle: true,
 
-      //   // backgroundColor: Colors.black,
-      //   color: Colors.black,
-      //   elevation: 2,
-
-      //   titleTextStyle: TextStyle(
-      //       fontSize: 16.sp, fontWeight: FontWeight.bold, color: Colors.white),
-      //   iconTheme: const IconThemeData(
-      //     color: Colors.white,
-      //   ),
-
-      // ),
+        titleTextStyle: TextStyle(
+            fontSize: 16.sp, fontWeight: FontWeight.bold, color: Colors.white),
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
+      ),
 
       //   buttonTheme: ButtonThemeData(
 

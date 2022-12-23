@@ -25,12 +25,13 @@ class AssetIcons {
   static const String dashboard = 'assets/icons/dashboard_icon.svg';
   static const String user = 'assets/icons/user.svg';
   static const String hrm = 'assets/icons/hrm.svg';
-  static const String notice =  'assets/icons/notice.svg';
-  static const String event =  'assets/icons/event.svg';
-  static const String contact =  'assets/icons/contact.svg';
-  static const String logout =  'assets/icons/logout.svg';
-  static const String drawerIcon =  'assets/icons/drawer_icon.svg';
-  static const String userImage =  'assets/icons/user_image.png';
+  static const String notice = 'assets/icons/notice.svg';
+  static const String event = 'assets/icons/event.svg';
+  static const String contact = 'assets/icons/contact.svg';
+  static const String logout = 'assets/icons/logout.svg';
+  static const String drawerIcon = 'assets/icons/drawer_icon.svg';
+  static const String closeIcon = 'assets/icons/close.svg';
+  static const String userImage = 'assets/icons/user_image.png';
 
   //lotti
   static const String lottie_list_loading =

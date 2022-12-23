@@ -112,8 +112,7 @@ class _InsertEmailScreenState extends State<InsertEmailScreen> {
                     .copyWith(color: AppColors.white),
                 context: context,
                 onCallBack: () async {
-                  NavigationService.navigateToReplacement(
-                      Routes.naviGationScreen);
+                  NavigationService.navigateToReplacement(Routes.logInScreen);
                 },
               ),
               UIHelper.verticalSpaceLarge,

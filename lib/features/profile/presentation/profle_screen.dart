@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
+import 'package:plix/constants/app_constants.dart';
 import 'package:plix/constants/text_font_style.dart';
-import 'package:plix/features/profile/data/rx_post_reset_pw/api.dart';
 import 'package:plix/helpers/ui_helpers.dart';
 import 'package:plix/helpers/all_routes.dart';
 import 'package:plix/helpers/navigation_service.dart';
@@ -16,7 +17,8 @@ import 'package:plix/widgets/custom_button.dart';
 import 'package:plix/widgets/loading_indicators.dart';
 
 import '../../../constants/app_color.dart';
-import '../../../networks/api_acess.dart';
+import '../../../helpers/appbarname_helper.dart';
+import '../../../widgets/custome_appbar.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -26,6 +28,12 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  @override
+  void initState() {
+    appBarName(name: "Profile", context: context);
+    super.initState();
+  }
+
   TextEditingController telePhoneEditingController = TextEditingController();
   TextEditingController emailPhoneEditingController = TextEditingController();
   TextEditingController passwordEditingController = TextEditingController();
@@ -50,58 +58,98 @@ class _ProfileScreenState extends State<ProfileScreen> {
       //     ),
       //     centerTitle: true),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: .37.sh,
-            child: Stack(
-              children: [
-                Positioned(
-                  top: 0,
-                  left: 0,
-                  child: Container(
-                    color: AppColors.primeryColor,
-                    height: .25.sh,
-                    width: 1.sw,
-                  ),
-                ),
-                ListTile(
-                    leading: Icon(Icons.menu, size: 24, color: AppColors.white),
-                    title: Padding(
-                      padding: EdgeInsets.only(right: 50),
-                      child: Text(
-                        'Profile',
-                        textAlign: TextAlign.center,
-                        style: TextFontStyle.headline3StyleInter
-                            .copyWith(color: AppColors.appColorFFFFFF),
-                      ),
-                    )),
-                Positioned(
-                  top: .115.sh,
-                  left: .27.sw,
-                  child: Container(
-                    margin: EdgeInsets.all(20),
-                    padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(180),
-                        border: Border.all(
-                            width: 2, color: AppColors.appColorFF6F6F6)),
-                    child: Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: CircleAvatar(
-                          radius: 60.r,
-                          backgroundColor: AppColors.appColorFFFFFF,
-                          child: CircleAvatar(
-                            radius: 50.r,
-                            backgroundImage: NetworkImage(
-                                "https://raw.githubusercontent.com/ArjunAtlast/Profile-Card/master/assets/john-doe.png"),
-                          ),
-                        )),
-                  ),
-                ),
-              ],
-            ),
+          custome_appbar(),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text("BIO"),
+              UIHelper.verticalSpace(5),
+              Container(
+                width: 30.0,
+                decoration: BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(
+                  color: AppColors.primeryColor,
+                  width: 3.0,
+                ))),
+              ),
+              UIHelper.verticalSpaceSmall,
+              Text(
+                  "Biodata format is a simple version of the resume. Biodata forms give a summary of your personal details, educational details."),
+              UIHelper.verticalSpaceMedium,
+              Text("EMAIL"),
+              UIHelper.verticalSpace(5),
+              Container(
+                width: 30.0,
+                decoration: BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(
+                  color: AppColors.primeryColor,
+                  width: 3.0,
+                ))),
+              ),
+              UIHelper.verticalSpaceSmall,
+              Text("test01@test.com"),
+              UIHelper.verticalSpaceMedium,
+              Text("PHONE"),
+              UIHelper.verticalSpace(5),
+              Container(
+                width: 30.0,
+                decoration: BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(
+                  color: AppColors.primeryColor,
+                  width: 3.0,
+                ))),
+              ),
+              UIHelper.verticalSpaceSmall,
+              Text("+880 1671 XXXXXX"),
+              UIHelper.verticalSpaceMedium,
+              Text("test01@test.com"),
+              UIHelper.verticalSpaceMedium,
+              Text("SOCIAL"),
+              UIHelper.verticalSpace(5),
+              Container(
+                width: 30.0,
+                decoration: BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(
+                  color: AppColors.primeryColor,
+                  width: 3.0,
+                ))),
+              ),
+              UIHelper.verticalSpaceSmall,
+              Row(
+                children: [
+                  SvgPicture.asset(AssetIcons.facebook),
+                  UIHelper.horizontalSpaceSmall,
+                  SvgPicture.asset(AssetIcons.instgram),
+                ],
+              ),
+              UIHelper.verticalSpaceMedium,
+            ]),
           ),
         ],
+      ),
+      floatingActionButton: InkWell(
+        onTap: () {
+          NavigationService.navigateTo(Routes.profileEditScreen);
+        },
+        child: ClipOval(
+          child: Container(
+            height: 50,
+            width: 50,
+            color: AppColors.primeryColor,
+            child: Icon(
+              Icons.edit,
+              color: AppColors.white,
+              size: 30,
+            ),
+          ),
+        ),
       ),
     );
   }

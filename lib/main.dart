@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:plix/constants/app_color.dart';
-import 'package:plix/features/dashboard/presentation/home_screen.dart';
+
 import 'package:plix/features/address/presentation/address_screen.dart';
 import 'package:plix/features/authentication/presentation/login/login_screen.dart';
 import 'package:plix/provider/email.dart';
@@ -30,20 +30,18 @@ import 'provider/product_id_provider.dart';
 import 'provider/sub_category.dart';
 import 'features/categories/presentation/category_search_screen.dart';
 import 'loading_screen.dart';
-import 'features/orders/order_screen.dart';
 import 'features/checkout/presentation/payment_option.dart';
 import 'features/product/presentation/product_detail_screen.dart';
-import 'features/profile/presentation/profle_screen.dart';
 
 Future<void> backgroundHandler(RemoteMessage message) async {}
 void main() async {
   diSetup();
   await GetStorage.init();
   DioSingleton.instance.create();
-  // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-  //   systemNavigationBarColor: Colors.black,
-  //   statusBarColor: AppColors.white,
-  // ));
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: AppColors.primeryColor,
+    statusBarColor: AppColors.primeryColor,
+  ));
   await Firebase.initializeApp();
   FirebaseMessaging.onBackgroundMessage(backgroundHandler);
   LocalNotificationService.initialize();
@@ -59,14 +57,8 @@ class MyApp extends StatelessWidget {
     setId();
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<EmailProvider>(
-            create: ((context) => EmailProvider())),
-        ChangeNotifierProvider<ProductPriceProvider>(
-          create: ((context) => ProductPriceProvider()),
-        ),
-        ChangeNotifierProvider<DateTimeProvider>(
-          create: ((context) => DateTimeProvider()),
-        )
+        ChangeNotifierProvider<AppBarNameProvider>(
+            create: ((context) => AppBarNameProvider())),
       ],
       child: LayoutBuilder(
         builder: (context, constraints) {

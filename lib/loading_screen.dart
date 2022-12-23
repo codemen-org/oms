@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:plix/features/profile/presentation/about_screen.dart';
-import 'package:plix/features/profile/presentation/information_screen.dart';
-import 'package:plix/features/profile/presentation/leave_details_screen.dart';
-import 'package:plix/features/profile/presentation/leave_request_screen.dart';
-import 'package:plix/features/profile/presentation/social_screen.dart';
-import 'package:plix/helpers/helper.dart';
 
+import 'package:plix/features/dashboard/presentation/tabs/dashboard_screen.dart';
+
+import 'package:plix/features/dashboard/presentation/tabs/total_list.dart';
+
+import 'package:plix/helpers/helper.dart';
+import 'package:plix/widgets/app_drawer.dart';
+
+import 'features/dashboard/presentation/dashboard_main_screen.dart';
 import 'helpers/notification_service.dart';
 import 'navigation_screen.dart';
 import 'networks/dio/dio.dart';
@@ -46,7 +48,6 @@ class _LoadingState extends State<Loading> {
       await getCartRXObj.getCartData();
       await getAddressRXObj.getAddressData();
       await getDefaultAddressRXObj.getDefaultAddressData();
-      await getProfileRXObj.fetchProfileData();
       await getOrderListRXObj.getOrderListData();
     }
     setState(() {
@@ -60,8 +61,8 @@ class _LoadingState extends State<Loading> {
       return const WelcomeScreen();
     } else {
       return appData.read(kKeyIsLoggedIn)
-          ? const NavigationScreen()
-          : const LeaveReqScreen();
+          ? const DashBoardMainScreen()
+          : const LogeinScreen();
     }
   }
 }

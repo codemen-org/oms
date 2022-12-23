@@ -23,12 +23,7 @@ import '../features/orders/data/rx_create_ordder/rx.dart';
 import '../features/orders/data/rx_get_default_address/rx.dart';
 import '../features/product/data/rx_add_cart/rx.dart';
 import '../features/product/data/rx_product_detail/rx.dart';
-import '../features/profile/data/rx_delete_account/rx.dart';
-import '../features/profile/data/rx_delete_token/rx.dart';
-import '../features/profile/data/rx_get_logout/rx.dart';
-import '../features/profile/data/rx_get_profile/rx.dart';
-import '../features/profile/data/rx_post_reset_pw/rx.dart';
-import '../features/profile/data/rx_post_update_phone/rx.dart';
+
 
 GetSignUpRX getSignUpRXObj = GetSignUpRX();
 VerifyOtpRX getVerifyOtpRXObj = VerifyOtpRX();
@@ -47,17 +42,14 @@ PostAddressRX postAddressRXObj = PostAddressRX();
 PostDeleteCartRX postDeleteCartRXObj = PostDeleteCartRX();
 GetTimeSlotRX getTimeSlotRXObj = GetTimeSlotRX();
 GetAddressRX getAddressRXObj = GetAddressRX();
-GetProfileRX getProfileRXObj = GetProfileRX();
-PostUpdatePhoneRX postUpdatePhoneRXObj = PostUpdatePhoneRX();
+
 PostCreateOrderRX postCreateOrderRXObj = PostCreateOrderRX();
 PostUpdateAddressRX postUpdateAddressRXObj = PostUpdateAddressRX();
 GetDefaultAddressRX getDefaultAddressRXObj = GetDefaultAddressRX();
 GetAddressWithIdRX getAddressWithIdRXObj = GetAddressWithIdRX();
 DeleteAddressWithIdRX deleteAddressWithIdRXObj = DeleteAddressWithIdRX();
-GetLogOutRX getLogOutRXObj = GetLogOutRX();
-DeleteAccountRX deleteAccountRXObj = DeleteAccountRX();
-PostUpdatePWRX postUpdatePWRXObj = PostUpdatePWRX();
+
 GetOrderListRX getOrderListRXObj = GetOrderListRX();
 GetOrderDetailRX getOrderDetailRXObj = GetOrderDetailRX();
 PostDeviceTokenRX postDeviceTokenRXobj = PostDeviceTokenRX();
-DeleteTokenRx deleteTokenRxObj = DeleteTokenRx();
+

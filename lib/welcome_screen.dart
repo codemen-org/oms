@@ -22,9 +22,7 @@ class WelcomeScreen extends StatelessWidget {
             children: <Widget>[
               UIHelper.verticalSpaceExtraLarge,
               UIHelper.verticalSpaceExtraLarge,
-              UIHelper.verticalSpaceExtraLarge,
               Image.asset(AssetIcons.splashScreen),
-              UIHelper.verticalSpaceExtraLarge,
               UIHelper.verticalSpaceExtraLarge,
               UIHelper.verticalSpaceExtraLarge,
               Container(
@@ -37,9 +35,17 @@ class WelcomeScreen extends StatelessWidget {
                 ))),
               ),
               UIHelper.verticalSpaceSmall,
-              Text("From", style: TextFontStyle.headline14StyleInter.copyWith(color: AppColors.white),),
+              Text(
+                "From",
+                style: TextFontStyle.headline14StyleInter
+                    .copyWith(color: AppColors.white),
+              ),
               UIHelper.verticalSpaceSmall,
-              Text("CODEMEN", style: TextFontStyle.headline14StyleInter.copyWith(color: AppColors.white),),
+              Text(
+                "CODEMEN",
+                style: TextFontStyle.headline14StyleInter
+                    .copyWith(color: AppColors.white),
+              ),
               UIHelper.verticalSpaceSmall,
               Text(
                 "(c) 2022 Codemen. All Rights Reserved.",

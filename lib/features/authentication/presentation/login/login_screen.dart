@@ -202,20 +202,21 @@ class _LogeinScreenState extends State<LogeinScreen> {
                     .copyWith(color: AppColors.white),
                 context: context,
                 onCallBack: () async {
-                  if (_formKey.currentState!.validate()) {
-                    setId();
-                    await getLoginRXObj.login(
-                        emailController.text, passwordController.text);
+                  NavigationService.navigateTo(Routes.dashBoardMainScreen);
+                  // if (_formKey.currentState!.validate()) {
+                  //   setId();
+                  //   await getLoginRXObj.login(
+                  //       emailController.text, passwordController.text);
 
-                    // setState(() {
-                    //   validation = true;
-                    // });
-                  } else {
-                    const snackBar = SnackBar(
-                        content: Text('Email or Password is not valid'));
+                  //   // setState(() {
+                  //   //   validation = true;
+                  //   // });
+                  // } else {
+                  //   const snackBar = SnackBar(
+                  //       content: Text('Email or Password is not valid'));
 
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
+                  //   ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  // }
                 },
               ),
               UIHelper.verticalSpaceLarge,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class PopUpStatus extends ChangeNotifier {
+class AppBarNameProvider extends ChangeNotifier {
   String _val = " ";
 
   String get name => _val;
