@@ -244,7 +244,7 @@ class _AddressScreenState extends State<AddressScreen> {
                       ),
                       title: Text(
                         "Default Address".tr,
-                        style: TextFontStyle.headline5StyleInter
+                        style: TextFontStyle.headline4StyleInter
                             .copyWith(color: AppColors.appColor2C303E),
                       ),
                     ),
@@ -262,10 +262,10 @@ class _AddressScreenState extends State<AddressScreen> {
                       keyboardType: TextInputType.name,
                       decoration: InputDecoration(
                         hintText: 'casa',
-                        hintStyle: TextFontStyle.headline5StyleInter
+                        hintStyle: TextFontStyle.headline4StyleInter
                             .copyWith(color: AppColors.appColor9B9B9B),
                         labelText: 'Nome da modrao',
-                        labelStyle: TextFontStyle.headline5StyleInter
+                        labelStyle: TextFontStyle.headline4StyleInter
                             .copyWith(color: AppColors.appColorF4A4A4A),
                         errorStyle: TextStyle(
                           letterSpacing: 1,
@@ -290,10 +290,10 @@ class _AddressScreenState extends State<AddressScreen> {
                       keyboardType: TextInputType.name,
                       decoration: InputDecoration(
                         hintText: 'Localização Atual',
-                        hintStyle: TextFontStyle.headline5StyleInter
+                        hintStyle: TextFontStyle.headline4StyleInter
                             .copyWith(color: AppColors.appColor9B9B9B),
                         labelText: 'Morada/Rua',
-                        labelStyle: TextFontStyle.headline5StyleInter
+                        labelStyle: TextFontStyle.headline4StyleInter
                             .copyWith(color: AppColors.appColorF4A4A4A),
                         errorStyle: TextStyle(
                           letterSpacing: 1,
@@ -323,10 +323,10 @@ class _AddressScreenState extends State<AddressScreen> {
                             keyboardType: TextInputType.number,
                             decoration: InputDecoration(
                               hintText: 'Número',
-                              hintStyle: TextFontStyle.headline5StyleInter
+                              hintStyle: TextFontStyle.headline4StyleInter
                                   .copyWith(color: AppColors.appColor9B9B9B),
                               labelText: 'Codigo postal',
-                              labelStyle: TextFontStyle.headline5StyleInter
+                              labelStyle: TextFontStyle.headline4StyleInter
                                   .copyWith(color: AppColors.appColorF4A4A4A),
                               errorStyle: TextStyle(
                                 letterSpacing: 1,
@@ -355,10 +355,10 @@ class _AddressScreenState extends State<AddressScreen> {
                             keyboardType: TextInputType.emailAddress,
                             decoration: InputDecoration(
                               hintText: 'Enter your Estado',
-                              hintStyle: TextFontStyle.headline5StyleInter
+                              hintStyle: TextFontStyle.headline4StyleInter
                                   .copyWith(color: AppColors.appColor9B9B9B),
                               labelText: 'Estado',
-                              labelStyle: TextFontStyle.headline5StyleInter
+                              labelStyle: TextFontStyle.headline4StyleInter
                                   .copyWith(color: AppColors.appColorF4A4A4A),
                               errorStyle: TextStyle(
                                 letterSpacing: 1,
@@ -387,10 +387,10 @@ class _AddressScreenState extends State<AddressScreen> {
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
                         hintText: 'Enter your Cidade',
-                        hintStyle: TextFontStyle.headline5StyleInter
+                        hintStyle: TextFontStyle.headline4StyleInter
                             .copyWith(color: AppColors.appColor9B9B9B),
                         labelText: 'Cidade',
-                        labelStyle: TextFontStyle.headline5StyleInter
+                        labelStyle: TextFontStyle.headline4StyleInter
                             .copyWith(color: AppColors.appColorF4A4A4A),
                         errorStyle: TextStyle(
                           letterSpacing: 1,

@@ -1,9 +1,12 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:plix/helpers/all_routes.dart';
 import 'package:plix/helpers/navigation_service.dart';
 
 import '../../../../helpers/ui_helpers.dart';
+import '../../../../provider/appbar_helper.dart';
 import '/constants/app_color.dart';
 import '/constants/app_constants.dart';
 import '/constants/text_font_style.dart';
@@ -22,6 +25,7 @@ class _InformationScreenState extends State<InformationScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+  ScrollController? scrollController = ScrollController();
 
   String? emailvalidation;
   bool validation = false;
@@ -29,6 +33,40 @@ class _InformationScreenState extends State<InformationScreen> {
   bool isSwitched = false;
 
   bool pwsecure = true;
+    @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      scrollController!.addListener(() {
+        print('scrolling');
+      });
+
+      log(scrollController!.position.isScrollingNotifier.value.toString());
+
+      scrollController!.position.isScrollingNotifier.addListener(() {
+        if (!scrollController!.position.isScrollingNotifier.value) {
+          if (scrollController!.position.pixels ==
+              scrollController!.position.maxScrollExtent) {
+            hideAppBarName(context: context, val: true);
+            print("for scroll end");
+          }
+          if (scrollController!.position.pixels ==
+              scrollController!.position.minScrollExtent) {
+            hideAppBarName(context: context, val: false);
+            print("for scroll at top");
+          }
+          print('scroll is stopped');
+        } else {
+          if (scrollController!.position.pixels <=
+              scrollController!.position.maxScrollExtent / 3) {
+            hideAppBarName(context: context, val: true);
+          }
+          print('scroll is started');
+        }
+      });
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,6 +74,7 @@ class _InformationScreenState extends State<InformationScreen> {
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: .05.sw),
         child: SingleChildScrollView(
+          controller: scrollController,
           child: Column(
             children: [
               UIHelper.verticalSpaceSemiLarge,

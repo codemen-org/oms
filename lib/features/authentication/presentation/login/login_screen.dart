@@ -58,7 +58,7 @@ class _LogeinScreenState extends State<LogeinScreen> {
                 children: <Widget>[
                   Text(
                     "Sign In",
-                    style: TextFontStyle.headline9StyleInter.copyWith(color: AppColors.text80),
+                    style: TextFontStyle.headline7StyleInter.copyWith(color: AppColors.text80),
                   ),
                   UIHelper.verticalSpaceSmall,
                   Text(
@@ -200,7 +200,7 @@ class _LogeinScreenState extends State<LogeinScreen> {
                 minWidth: double.infinity,
                 borderRadius: 5.r,
                 color: AppColors.primeryColor,
-                textStyle: TextFontStyle.headline5StyleInter
+                textStyle: TextFontStyle.headline4StyleInter
                     .copyWith(color: AppColors.white),
                 context: context,
                 onCallBack: () async {

@@ -102,10 +102,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         decoration: InputDecoration(
                           hintText: 'Enter First Name',
-                          hintStyle: TextFontStyle.headline5StyleInter
+                          hintStyle: TextFontStyle.headline4StyleInter
                               .copyWith(color: AppColors.appColor9B9B9B),
                           labelText: 'First Name',
-                          labelStyle: TextFontStyle.headline5StyleInter
+                          labelStyle: TextFontStyle.headline4StyleInter
                               .copyWith(color: AppColors.appColorF4A4A4A),
                           errorStyle: TextStyle(
                             letterSpacing: 1,
@@ -138,10 +138,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         decoration: InputDecoration(
                           hintText: 'Enter Last Name',
-                          hintStyle: TextFontStyle.headline5StyleInter
+                          hintStyle: TextFontStyle.headline4StyleInter
                               .copyWith(color: AppColors.appColor9B9B9B),
                           labelText: 'Last Name',
-                          labelStyle: TextFontStyle.headline5StyleInter
+                          labelStyle: TextFontStyle.headline4StyleInter
                               .copyWith(color: AppColors.appColorF4A4A4A),
                           errorStyle: TextStyle(
                             letterSpacing: 1,
@@ -174,10 +174,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         decoration: InputDecoration(
                           hintText: 'Enter your email',
-                          hintStyle: TextFontStyle.headline5StyleInter
+                          hintStyle: TextFontStyle.headline4StyleInter
                               .copyWith(color: AppColors.appColor9B9B9B),
                           labelText: 'Email',
-                          labelStyle: TextFontStyle.headline5StyleInter
+                          labelStyle: TextFontStyle.headline4StyleInter
                               .copyWith(color: AppColors.appColorF4A4A4A),
                           errorStyle: TextStyle(
                             letterSpacing: 1,
@@ -210,10 +210,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         decoration: InputDecoration(
                           hintText: 'Enter your phone number',
-                          hintStyle: TextFontStyle.headline5StyleInter
+                          hintStyle: TextFontStyle.headline4StyleInter
                               .copyWith(color: AppColors.appColor9B9B9B),
                           labelText: 'Telephone',
-                          labelStyle: TextFontStyle.headline5StyleInter
+                          labelStyle: TextFontStyle.headline4StyleInter
                               .copyWith(color: AppColors.appColorF4A4A4A),
                           errorStyle: TextStyle(
                             letterSpacing: 1,
@@ -257,10 +257,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   vertical: 1.0,
                                 ),
                                 hintText: 'Enter your Password',
-                                hintStyle: TextFontStyle.headline5StyleInter
+                                hintStyle: TextFontStyle.headline4StyleInter
                                     .copyWith(color: AppColors.appColor9B9B9B),
                                 labelText: 'Password',
-                                labelStyle: TextFontStyle.headline5StyleInter
+                                labelStyle: TextFontStyle.headline4StyleInter
                                     .copyWith(color: AppColors.appColorF4A4A4A),
                                 errorStyle: TextStyle(
                                   letterSpacing: 1,
@@ -326,10 +326,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   vertical: 1.0,
                                 ),
                                 hintText: 'Enter your Password',
-                                hintStyle: TextFontStyle.headline5StyleInter
+                                hintStyle: TextFontStyle.headline4StyleInter
                                     .copyWith(color: AppColors.appColor9B9B9B),
                                 labelText: 'Retype Password',
-                                labelStyle: TextFontStyle.headline5StyleInter
+                                labelStyle: TextFontStyle.headline4StyleInter
                                     .copyWith(color: AppColors.appColorF4A4A4A),
                                 errorStyle: TextStyle(
                                   letterSpacing: 1,

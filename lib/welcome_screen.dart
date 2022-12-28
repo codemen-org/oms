@@ -19,36 +19,38 @@ class WelcomeScreen extends StatelessWidget {
         decoration: const BoxDecoration(color: AppColors.primeryColor),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              UIHelper.verticalSpaceExtraLarge,
               UIHelper.verticalSpaceExtraLarge,
               UIHelper.verticalSpaceExtraLarge,
               Image.asset(AssetIcons.splashScreen),
               UIHelper.verticalSpaceExtraLarge,
               UIHelper.verticalSpaceExtraLarge,
+              UIHelper.verticalSpaceMedium,
               Container(
                 width: 140.0,
                 decoration: BoxDecoration(
                     border: Border(
                         bottom: BorderSide(
-                  color: AppColors.white,
+                  color: AppColors.text30,
                   width: 1.0,
                 ))),
               ),
               UIHelper.verticalSpaceSmall,
               Text(
                 "From",
-                style: TextFontStyle.headline14StyleInter
+                style: TextFontStyle.headline5StyleInter
                     .copyWith(color: AppColors.white),
               ),
-              UIHelper.verticalSpaceSmall,
               Text(
                 "CODEMEN",
-                style: TextFontStyle.headline14StyleInter
+                style: TextFontStyle.headline5StyleInter
                     .copyWith(color: AppColors.white),
               ),
               UIHelper.verticalSpaceSmall,
               Text(
-                "(c) 2022 Codemen. All Rights Reserved.",
+                "© 2022 Codemen. All Rights Reserved.",
                 style: TextStyle(
                     fontSize: 12.0,
                     fontWeight: FontWeight.w300,

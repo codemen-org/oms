@@ -21,8 +21,8 @@ class AssetIcons {
   static const String cart = 'assets/icons/cart.svg';
   static const String shop = 'assets/icons/ic_shop.svg';
   static const String facebook = 'assets/icons/facebook.svg';
-  static const String instgram = 'assets/icons/instagram.svg';
   static const String twitter = 'assets/icons/twitter.svg';
+  static const String linkedin = 'assets/icons/linkedin.svg';
   static const String dashboard = 'assets/icons/dashboard_icon.svg';
   static const String user = 'assets/icons/user.svg';
   static const String hrm = 'assets/icons/hrm.svg';

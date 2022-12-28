@@ -67,7 +67,7 @@ class TextFontStyle {
       fontWeight: FontWeight.w400);
   static final headline14StyleInter = GoogleFonts.poppins(
       color: AppColors.appColor000000,
-      fontSize: 10.sp, //used
+      fontSize: 10.sp, //used 
       fontWeight: FontWeight.w400);
   static final headline15StyleInter = GoogleFonts.poppins(
       color: AppColors.appColor000000,

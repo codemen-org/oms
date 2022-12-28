@@ -127,9 +127,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
               UIHelper.verticalSpaceSmall,
               Row(
                 children: [
-                  SvgPicture.asset(AssetIcons.facebook,color: AppColors.primeryColor),
+                  SvgPicture.asset(AssetIcons.facebook, ),
                   UIHelper.horizontalSpaceSmall,
-                  SvgPicture.asset(AssetIcons.instgram, color: AppColors.primeryColor,),
+                  SvgPicture.asset(AssetIcons.twitter),
+                  UIHelper.horizontalSpaceSmall,
+                  SvgPicture.asset(AssetIcons.linkedin),
                 ],
               ),
             ]),

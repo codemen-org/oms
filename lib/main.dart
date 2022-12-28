@@ -10,6 +10,7 @@ import 'package:plix/constants/app_color.dart';
 import 'package:plix/features/address/presentation/address_screen.dart';
 import 'package:plix/features/authentication/presentation/login/login_screen.dart';
 import 'package:plix/provider/email.dart';
+import 'package:plix/provider/hide_appbar_provider.dart';
 import 'package:plix/welcome_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -58,7 +59,9 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<AppBarNameProvider>(
-            create: ((context) => AppBarNameProvider())),
+          create: ((context) => AppBarNameProvider())),
+        ChangeNotifierProvider<HideAppBarProvider>(
+          create: ((context) => HideAppBarProvider())),
       ],
       child: LayoutBuilder(
         builder: (context, constraints) {

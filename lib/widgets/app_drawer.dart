@@ -44,7 +44,7 @@ class _AppDrawerState extends State<AppDrawer> {
               children: [
                 Image.asset(
                   AssetIcons.splash,
-                  scale: 4,
+                  scale: 3,
                 ),
                 DrawerTileWidget(
                   color: AppColors.primeryColor,

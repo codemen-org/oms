@@ -56,7 +56,7 @@ class _ForgotPWScreenState extends State<ForgotPWScreen> {
                 children: <Widget>[
                   Text(
                     "Change Password ",
-                    style: TextFontStyle.headline9StyleInter.copyWith(color: AppColors.text80),
+                    style: TextFontStyle.headline7StyleInter.copyWith(color: AppColors.text80),
                   ),
                   UIHelper.verticalSpaceSmall,
                   Text(
@@ -186,7 +186,7 @@ class _ForgotPWScreenState extends State<ForgotPWScreen> {
                 minWidth: double.infinity,
                 borderRadius: 5.r,
                 color: AppColors.primeryColor,
-                textStyle: TextFontStyle.headline5StyleInter
+                textStyle: TextFontStyle.headline4StyleInter
                     .copyWith(color: AppColors.white),
                 context: context,
                 onCallBack: () async {

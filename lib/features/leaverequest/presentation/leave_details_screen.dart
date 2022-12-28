@@ -4,6 +4,7 @@ import 'package:plix/constants/app_constants.dart';
 import 'package:plix/constants/text_font_style.dart';
 import 'package:plix/helpers/ui_helpers.dart';
 import 'package:plix/widgets/app_drawer.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LeavedetailsScreen extends StatefulWidget {
   const LeavedetailsScreen({super.key});
@@ -18,7 +19,10 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
     return Scaffold(
       drawer: AppDrawer(),
       appBar: AppBar(
-        title: Text("Leave Details", style: TextFontStyle.headline11StyleInter,),
+        title: Text(
+          "Leave Details",
+          style: TextFontStyle.headline11StyleInter,
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -29,11 +33,11 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                   side: BorderSide(color: AppColors.text20)),
-              color: AppColors.text10,
+              color: AppColors.white,
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Container(
-                  color: AppColors.text10,
+                  color: AppColors.white,
                   width: 300.0,
                   child: Column(
                     children: <Widget>[
@@ -45,7 +49,7 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
                           UIHelper.horizontalSpaceMedium,
                           Text(
                             "Sveltiana",
-                            style: TextStyle(color: Colors.black),
+                            style: TextFontStyle.headline6StyleInter.copyWith(color: Colors.black),
                           )
                         ],
                       ),
@@ -56,6 +60,19 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
                             "Casual Leave",
                             style: TextStyle(color: AppColors.text60),
                           ),
+                          UIHelper.horizontalSpaceSmall,
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(30.0),
+                            child: Container(
+                              alignment: Alignment.center,
+                              constraints: BoxConstraints(
+                                  maxWidth: .20.sw, maxHeight: .02.sh),
+                              color: Colors.red,
+                              child: Text('REJECTED',
+                                  style: TextFontStyle.headline8StyleInter
+                                      .copyWith(color: AppColors.white)),
+                            ),
+                          ),
                         ],
                       ),
                       UIHelper.verticalSpaceMedium,
@@ -63,16 +80,15 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
                         children: <Widget>[
                           Text(
                             "LEAVE REASON",
-                            style: TextStyle(color: AppColors.text40),
+                            style: TextFontStyle.headline16StyleInter.copyWith(color: AppColors.text30),
                           )
                         ],
                       ),
-                      UIHelper.verticalSpaceSmall,
                       Row(
                         children: <Widget>[
                           Text(
                             "Biodata format is a simple version of the \n resume. Biodata forms give a summary of \n your personal details. Biodata format is a \n simple version of the resume. Biodata forms \n give a summary of your personal details.",
-                            style: TextStyle(color: AppColors.text60),
+                            style: TextFontStyle.headline15StyleInter.copyWith(color: AppColors.text60),
                           )
                         ],
                       ),
@@ -87,7 +103,7 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
                                 children: [
                                   Text(
                                     "START DATE",
-                                    style: TextStyle(color: AppColors.text40),
+                                    style: TextFontStyle.headline16StyleInter.copyWith(color: AppColors.text30),
                                   ),
                                 ],
                               ),
@@ -103,7 +119,7 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
                             children: <Widget>[
                               Text(
                                 "END DATE",
-                                style: TextStyle(color: AppColors.text40),
+                                style: TextFontStyle.headline16StyleInter.copyWith(color: AppColors.text30),
                               ),
                               Text(
                                 "12 Dec 12:00PM",
@@ -114,14 +130,13 @@ class _LeavedetailsScreenState extends State<LeavedetailsScreen> {
                           UIHelper.horizontalSpaceMedium,
                           UIHelper.horizontalSpaceSmall,
                           UIHelper.horizontalSpaceSmall,
-                          UIHelper.horizontalSpaceSmall,
                           Column(
                             children: <Widget>[
                               CircleAvatar(
-                                backgroundColor: AppColors.text20,
+                                backgroundColor: AppColors.text10,
                                 child: Text(
-                                  "02",
-                                  style: TextStyle(color: AppColors.text80),
+                                  "00",
+                                  style: TextStyle(color: AppColors.text60),
                                 ),
                               )
                               // ElevatedButton(

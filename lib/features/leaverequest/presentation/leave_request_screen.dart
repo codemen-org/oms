@@ -291,6 +291,7 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                         Row(
                           children: [
                             Radio(
+                              fillColor: MaterialStateColor.resolveWith((states) => AppColors.successColor),
                                 value: 1,
                                 groupValue: _value,
                                 onChanged: (value) {
@@ -301,6 +302,7 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                             Text("Half Day"),
                             UIHelper.horizontalSpaceMedium,
                             Radio(
+                              fillColor: MaterialStateColor.resolveWith((states) => AppColors.successColor),
                                 value: 2,
                                 groupValue: _value,
                                 onChanged: (value) {

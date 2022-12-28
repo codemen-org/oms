@@ -8,10 +8,25 @@ import 'package:provider/provider.dart';
 import '../constants/app_color.dart';
 import '../constants/text_font_style.dart';
 import '../helpers/all_routes.dart';
+import '../helpers/animation_helper.dart';
 import '../provider/catpopup_status.dart';
+import '../provider/hide_appbar_provider.dart';
 
 class custome_appbar extends StatelessWidget {
   const custome_appbar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+        return Consumer<HideAppBarProvider>(builder: (context, value, child) {
+      return ExpandedSection(expand: !value.bar, child: appbar());
+    });
+  }
+  }
+
+class appbar extends StatelessWidget {
+  const appbar({
     Key? key,
   }) : super(key: key);
 
@@ -78,7 +93,7 @@ class custome_appbar extends StatelessWidget {
         ),
         Text("John Doe", style: TextFontStyle.headline1StyleInter.copyWith(color: AppColors.text80),),
         UIHelper.verticalSpaceSmall,
-        Text("Full Stack Web Developer \n @ codemen", style: TextFontStyle.headline13StyleInter.copyWith(color: AppColors.text60), textAlign: TextAlign.center,),
+        Text("Full Stack Web Developer \n @ codemen", style: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text60), textAlign: TextAlign.center,),
         UIHelper.verticalSpaceMedium,
       ],
     );

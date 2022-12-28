@@ -34,6 +34,7 @@ class _LeaveListScreenState extends State<LeaveListScreen> {
                     return Container(
                       width: 140,
                       decoration: BoxDecoration(
+                        color: AppColors.white,
                           border:
                               Border.all(width: 1.0, color: AppColors.text40),
                           borderRadius: BorderRadius.all(Radius.circular(5.0))),
@@ -46,7 +47,7 @@ class _LeaveListScreenState extends State<LeaveListScreen> {
                           children: [
                             Text("All"),
                             Text("13,345 Users"),
-                            Text("5633 List"),
+                            Text("5633 List", style: TextStyle(color: AppColors.text40),),
                           ],
                         ),
                       ),
@@ -99,123 +100,119 @@ class _LeaveListScreenState extends State<LeaveListScreen> {
                     },
                     child: Card(
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10), side: BorderSide(color: AppColors.text20)),
-                      color: AppColors.text10,
-                      child: Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Container(
-                          color: AppColors.text10,
-                          width: 340.0,
-                          child: Column(
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  CircleAvatar(
-                                    backgroundImage:
-                                        AssetImage(AssetIcons.userImage),
-                                  ),
-                                  UIHelper.horizontalSpaceSmall,
-                                  Text(
-                                    "Sveltiana",
-                                    style: TextStyle(color: Colors.black),
-                                  )
-                                ],
-                              ),
-                              UIHelper.verticalSpaceSmall,
-                              Row(
-                                children: <Widget>[
-                                  Text(
-                                    "Casual Leave",
-                                    style: TextStyle(color: AppColors.text60),
-                                  ),
-                                  UIHelper.horizontalSpaceSmall,
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(30.0),
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      constraints: BoxConstraints(
-                                          maxWidth: .20.sw, maxHeight: .02.sh),
-                                      color: Colors.green,
-                                      child: Text('ClipRRect',
-                                          style: TextFontStyle
-                                              .headline11StyleInter
-                                              .copyWith(
-                                                  color: AppColors.white)),
+                        color: AppColors.white,
+                        elevation: .5,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Container(
+                            color: AppColors.white,
+                            width: 340.0,
+                            child: Column(
+                              children: <Widget>[
+                                Row(
+                                  children: <Widget>[
+                                    CircleAvatar(
+                                      backgroundImage:
+                                          AssetImage(AssetIcons.userImage),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              UIHelper.verticalSpaceSmall,
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: <Widget>[
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Row(
-                                        children: [
-                                          Text(
-                                            "START DATE",
-                                            style: TextStyle(
-                                                color: AppColors.text40),
-                                          ),
-                                        ],
+                                    UIHelper.horizontalSpaceSmall,
+                                    Text(
+                                      "Sveltiana",
+                                      style: TextFontStyle.headline6StyleInter.copyWith(color: Colors.black),
+                                    )
+                                  ],
+                                ),
+                                UIHelper.verticalSpaceSmall,
+                                Row(
+                                  children: <Widget>[
+                                    Text(
+                                      "Casual Leave",
+                                      style: TextStyle(color: AppColors.text60)
+                                    ),
+                                    UIHelper.horizontalSpaceSmall,
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(30.0),
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        constraints: BoxConstraints(
+                                            maxWidth: .20.sw,
+                                            maxHeight: .02.sh),
+                                        color: Colors.green,
+                                        child: Text('ClipRRect',
+                                            style: TextFontStyle
+                                                .headline8StyleInter
+                                                .copyWith(
+                                                    color: AppColors.white)),
                                       ),
-                                      Text(
-                                        "12 Dec 12:00PM",
-                                        style:
-                                            TextStyle(color: AppColors.text60),
-                                      ),
-                                    ],
-                                  ),
-                                  UIHelper.horizontalSpaceSmall,
-                                  UIHelper.horizontalSpaceSmall,
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "END DATE",
-                                        style:
-                                            TextStyle(color: AppColors.text40),
-                                      ),
-                                      Text(
-                                        "12 Dec 12:00PM",
-                                        style:
-                                            TextStyle(color: AppColors.text60),
-                                      ),
-                                    ],
-                                  ),
-                                  UIHelper.horizontalSpaceMedium,
-                                  UIHelper.horizontalSpaceSmall,
-                                  UIHelper.horizontalSpaceSmall,
-                                  UIHelper.horizontalSpaceSmall,
-                                  Column(
-                                    children: <Widget>[
-                                      CircleAvatar(
-                                        backgroundColor: AppColors.text20,
-                                        child: Text("02", style: TextStyle(color: AppColors.text80),),
+                                    ),
+                                  ],
+                                ),
+                                UIHelper.verticalSpaceSmall,
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: <Widget>[
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Row(
+                                          children: [
+                                            Text(
+                                              "START DATE",
+                                              style: TextFontStyle.headline8StyleInter.copyWith(color: AppColors.text40),
+                                            ),
+                                          ],
+                                        ),
+                                        Text(
+                                          "12 Dec 12:00PM",
+                                          style: TextFontStyle.headline6StyleInter.copyWith(color: AppColors.text60),
+                                        ),
+                                      ],
+                                    ),
+                                    UIHelper.horizontalSpaceSmall,
+                                    UIHelper.horizontalSpaceSmall,
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Text(
+                                          "END DATE",
+                                          style:TextFontStyle.headline8StyleInter.copyWith(color: AppColors.text40),
+                                        ),
+                                        Text(
+                                          "12 Dec 12:00PM",
+                                          style: TextFontStyle.headline6StyleInter.copyWith(color: AppColors.text60),
+                                        ),
+                                      ],
+                                    ),
+                                    UIHelper.horizontalSpaceSemiLarge,
+                                    Column(
+                                      children: <Widget>[
+                                        CircleAvatar(
+                                        backgroundColor: AppColors.text10,
+                                        child: Text("02", style: TextStyle(color: AppColors.text60),),
                                       )
-                                      // ElevatedButton(
-                                      //   onPressed: () {},
-                                      //   child: Text(
-                                      //     "02",
-                                      //     style: TextStyle(
-                                      //         color: AppColors.text80),
-                                      //   ),
-                                      //   style: ElevatedButton.styleFrom(
-                                      //       shape:
-                                      //           CircleBorder(), //<-- SEE HERE
-                                      //       padding: EdgeInsets.all(10),
-                                      //       backgroundColor: AppColors.text20),
-                                      // ),
-                                    ],
-                                  ),
-                                ],
-                              )
-                            ],
+                                        // ElevatedButton(
+                                        //   onPressed: () {},
+                                        //   child: Text(
+                                        //     "02",
+                                        //     style: TextStyle(
+                                        //         color: AppColors.text80),
+                                        //   ),
+                                        //   style: ElevatedButton.styleFrom(
+                                        //       shape:
+                                        //           CircleBorder(), //<-- SEE HERE
+                                        //       padding: EdgeInsets.all(10),
+                                        //       backgroundColor:
+                                        //           AppColors.text20),
+                                        // ),
+                                      ],
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
                   );
                 },
               ),

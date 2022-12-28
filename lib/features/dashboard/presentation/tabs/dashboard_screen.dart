@@ -28,13 +28,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
               Row(
                 children: [
                   Card(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10), side: BorderSide(color: AppColors.text20)),
-
-                    color: AppColors.text10,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        side: BorderSide(color: AppColors.text20)),
+                    color: AppColors.white,
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Container(
-                        color: AppColors.text10,
+                        color: AppColors.white,
                         width: 145.0,
                         child: Column(
                           children: <Widget>[
@@ -53,13 +54,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               children: <Widget>[
                                 Text(
                                   "51,855",
-                                  style: TextFontStyle.headline10StyleInter.copyWith(color: AppColors.text80),
+                                  style: TextFontStyle.headline10StyleInter
+                                      .copyWith(color: AppColors.text80),
                                 ),
                                 UIHelper.horizontalSpaceSmall,
                                 Text(
                                   "+55%",
-                                  style:
-                                      TextFontStyle.headline8StyleInter.copyWith(color: AppColors.primeryColor),
+                                  style: TextFontStyle.headline8StyleInter
+                                      .copyWith(color: AppColors.primeryColor),
                                 ),
                               ],
                             ),
@@ -71,7 +73,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   style: TextFontStyle.headline13StyleInter
                                       .copyWith(color: AppColors.text30),
                                 ),
-                                UIHelper.horizontalSpaceMedium,
+                                UIHelper.horizontalSpaceSmall,
                               ],
                             )
                           ],
@@ -80,13 +82,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     ),
                   ),
                   Card(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10), side: BorderSide(color: AppColors.text20)),
-
-                    color: AppColors.text10,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        side: BorderSide(color: AppColors.text20)),
+                    color: AppColors.white,
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Container(
-                        color: AppColors.text10,
+                        color: AppColors.white,
                         width: 145.0,
                         child: Column(
                           children: <Widget>[
@@ -105,13 +108,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               children: <Widget>[
                                 Text(
                                   "51,855",
-                                  style: TextFontStyle.headline10StyleInter.copyWith(color: AppColors.text80),
+                                  style: TextFontStyle.headline10StyleInter
+                                      .copyWith(color: AppColors.text80),
                                 ),
                                 UIHelper.horizontalSpaceSmall,
                                 Text(
                                   "+55%",
-                                  style:
-                                      TextFontStyle.headline8StyleInter.copyWith(color: AppColors.primeryColor),
+                                  style: TextFontStyle.headline8StyleInter
+                                      .copyWith(color: AppColors.primeryColor),
                                 ),
                               ],
                             ),
@@ -136,13 +140,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
               Row(
                 children: [
                   Card(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10), side: BorderSide(color: AppColors.text20)),
-
-                    color: AppColors.text10,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        side: BorderSide(color: AppColors.text20)),
+                    color: AppColors.white,
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Container(
-                        color: AppColors.text10,
+                        color: AppColors.white,
                         width: 145.0,
                         child: Column(
                           children: <Widget>[
@@ -161,13 +166,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               children: <Widget>[
                                 Text(
                                   "51,855",
-                                  style: TextFontStyle.headline10StyleInter.copyWith(color: AppColors.text80),
+                                  style: TextFontStyle.headline10StyleInter
+                                      .copyWith(color: AppColors.text80),
                                 ),
                                 UIHelper.horizontalSpaceSmall,
                                 Text(
                                   "+55%",
-                                  style:
-                                      TextFontStyle.headline8StyleInter.copyWith(color: AppColors.primeryColor),
+                                  style: TextFontStyle.headline8StyleInter
+                                      .copyWith(color: AppColors.primeryColor),
                                 ),
                               ],
                             ),
@@ -179,7 +185,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   style: TextFontStyle.headline13StyleInter
                                       .copyWith(color: AppColors.text30),
                                 ),
-                                UIHelper.horizontalSpaceMedium,
+                                UIHelper.horizontalSpaceSmall,
                               ],
                             )
                           ],
@@ -188,13 +194,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     ),
                   ),
                   Card(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10), side: BorderSide(color: AppColors.text20)),
-                    
-                    color: AppColors.text10,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        side: BorderSide(color: AppColors.text20)),
+                    color: AppColors.white,
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Container(
-                        color: AppColors.text10,
+                        color: AppColors.white,
                         width: 145.0,
                         child: Column(
                           children: <Widget>[
@@ -213,13 +220,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               children: <Widget>[
                                 Text(
                                   "51,855",
-                                  style: TextFontStyle.headline10StyleInter.copyWith(color: AppColors.text80),
+                                  style: TextFontStyle.headline10StyleInter
+                                      .copyWith(color: AppColors.text80),
                                 ),
                                 UIHelper.horizontalSpaceSmall,
                                 Text(
                                   "+55%",
-                                  style:
-                                      TextFontStyle.headline8StyleInter.copyWith(color: AppColors.primeryColor),
+                                  style: TextFontStyle.headline8StyleInter
+                                      .copyWith(color: AppColors.primeryColor),
                                 ),
                               ],
                             ),
@@ -231,7 +239,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   style: TextFontStyle.headline13StyleInter
                                       .copyWith(color: AppColors.text30),
                                 ),
-                                UIHelper.horizontalSpaceMedium,
+                                UIHelper.horizontalSpaceSmall,
                               ],
                             )
                           ],
@@ -248,14 +256,26 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Notice"),
-                    InkWell(
-                        onTap: () {
-                          NavigationService.navigateTo(Routes.searchScreen);
-                        },
-                        child: Text(
-                          "View All",
-                          style: TextStyle(color: AppColors.primeryColor),
-                        ))
+                    Column(
+                      children: [
+                        InkWell(
+                            onTap: () {
+                              NavigationService.navigateTo(Routes.searchScreen);
+                            },
+                            child: Text(
+                              "View All",
+                              style: TextStyle(color: AppColors.primeryColor),
+                            )),
+                        Container(
+                            width: 50.0,
+                            decoration: BoxDecoration(
+                                border: Border(
+                                    bottom: BorderSide(
+                              color: AppColors.primeryColor,
+                              width: 1.0,
+                            ))))
+                      ],
+                    ),
                   ],
                 ),
               ),
@@ -272,13 +292,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             Routes.leaveDetailesScreen);
                       },
                       child: Card(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10), side: BorderSide(color: AppColors.text20)),
-                        color: AppColors.text10,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(color: AppColors.text20)),
+                        color: AppColors.white,
                         elevation: .5,
                         child: Padding(
                           padding: const EdgeInsets.all(20.0),
                           child: Container(
-                            color: AppColors.text10,
+                            color: AppColors.white,
                             width: 340.0,
                             child: Column(
                               children: <Widget>[
@@ -291,17 +313,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     UIHelper.horizontalSpaceSmall,
                                     Text(
                                       "Sveltiana",
-                                      style: TextFontStyle.headline6StyleInter.copyWith(color: Colors.black),
+                                      style: TextFontStyle.headline6StyleInter
+                                          .copyWith(color: Colors.black),
                                     )
                                   ],
                                 ),
                                 UIHelper.verticalSpaceSmall,
                                 Row(
                                   children: <Widget>[
-                                    Text(
-                                      "Casual Leave",
-                                      style: TextStyle(color: AppColors.text60),
-                                    ),
+                                    Text("Casual Leave",
+                                        style:
+                                            TextStyle(color: AppColors.text60)),
                                     UIHelper.horizontalSpaceSmall,
                                     ClipRRect(
                                       borderRadius: BorderRadius.circular(30.0),
@@ -325,34 +347,48 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: <Widget>[
                                         Row(
                                           children: [
                                             Text(
                                               "START DATE",
-                                              style: TextFontStyle.headline8StyleInter.copyWith(color: AppColors.text40),
+                                              style: TextFontStyle
+                                                  .headline8StyleInter
+                                                  .copyWith(
+                                                      color: AppColors.text40),
                                             ),
                                           ],
                                         ),
                                         Text(
                                           "12 Dec 12:00PM",
-                                          style: TextFontStyle.headline6StyleInter.copyWith(color: AppColors.text60),
+                                          style: TextFontStyle
+                                              .headline6StyleInter
+                                              .copyWith(
+                                                  color: AppColors.text60),
                                         ),
                                       ],
                                     ),
                                     UIHelper.horizontalSpaceSmall,
                                     UIHelper.horizontalSpaceSmall,
                                     Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: <Widget>[
                                         Text(
                                           "END DATE",
-                                          style:TextFontStyle.headline8StyleInter.copyWith(color: AppColors.text40),
+                                          style: TextFontStyle
+                                              .headline8StyleInter
+                                              .copyWith(
+                                                  color: AppColors.text40),
                                         ),
                                         Text(
                                           "12 Dec 12:00PM",
-                                          style: TextFontStyle.headline6StyleInter.copyWith(color: AppColors.text60),
+                                          style: TextFontStyle
+                                              .headline6StyleInter
+                                              .copyWith(
+                                                  color: AppColors.text60),
                                         ),
                                       ],
                                     ),
@@ -360,9 +396,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     Column(
                                       children: <Widget>[
                                         CircleAvatar(
-                                        backgroundColor: AppColors.text20,
-                                        child: Text("02", style: TextStyle(color: AppColors.text80),),
-                                      )
+                                          backgroundColor: AppColors.text10,
+                                          child: Text(
+                                            "02",
+                                            style: TextStyle(
+                                                color: AppColors.text60),
+                                          ),
+                                        )
                                         // ElevatedButton(
                                         //   onPressed: () {},
                                         //   child: Text(

@@ -51,7 +51,7 @@ class _InsertEmailScreenState extends State<InsertEmailScreen> {
                 children: <Widget>[
                   Text(
                     "Forget Password",
-                    style: TextFontStyle.headline9StyleInter.copyWith(color: AppColors.text80),
+                    style: TextFontStyle.headline7StyleInter.copyWith(color: AppColors.text80),
                   ),
                   UIHelper.verticalSpaceSmall,
                   Text(
@@ -109,7 +109,7 @@ class _InsertEmailScreenState extends State<InsertEmailScreen> {
                 minWidth: double.infinity,
                 borderRadius: 5.r,
                 color: AppColors.primeryColor,
-                textStyle: TextFontStyle.headline5StyleInter
+                textStyle: TextFontStyle.headline4StyleInter
                     .copyWith(color: AppColors.white),
                 context: context,
                 onCallBack: () async {

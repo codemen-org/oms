@@ -76,12 +76,12 @@ class _SearchScreenState extends State<SearchScreen>{
                 itemBuilder: (context, index) {
                   return  Card(
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10), side: BorderSide(color: AppColors.text20)),
-                        color: AppColors.text10,
+                        color: AppColors.white,
                         elevation: .5,
                         child: Padding(
                           padding: const EdgeInsets.all(20.0),
                           child: Container(
-                            color: AppColors.text10,
+                            color: AppColors.white,
                             width: 340.0,
                             child: Column(
                               children: <Widget>[
@@ -163,8 +163,8 @@ class _SearchScreenState extends State<SearchScreen>{
                                     Column(
                                       children: <Widget>[
                                         CircleAvatar(
-                                        backgroundColor: AppColors.text20,
-                                        child: Text("02", style: TextStyle(color: AppColors.text80),),
+                                        backgroundColor: AppColors.text10,
+                                        child: Text("02", style: TextStyle(color: AppColors.text60),),
                                       )
                                         // ElevatedButton(
                                         //   onPressed: () {},
