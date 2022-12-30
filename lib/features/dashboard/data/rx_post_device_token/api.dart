@@ -6,12 +6,10 @@ import 'package:flutter/foundation.dart';
 import '../../../../networks/dio/dio.dart';
 import '../../../../networks/endpoints.dart';
 
-
-
-class PostDeviceTokenApi {
-  Future<Map> postDeviceToken(Map data) async {
+class GetLeaveReqListApi {
+  Future<Map> getLeaveList(Map data) async {
     final response = await postHttp(
-      Endpoints.postDeviceToken(),
+      Endpoints.getLeaveReqList(),
       data,
     );
 

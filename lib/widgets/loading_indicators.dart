@@ -14,7 +14,7 @@ Widget loadingIndicatorCircle({
   double loaderSize = 50.sp;
   return Center(
     child: SpinKitFadingCircle(
-      color: color ?? AppColors.appColor4D3E39,
+      color: color ?? AppColors.primeryColor,
       size: size ?? loaderSize,
     ),
   );

@@ -4,8 +4,10 @@ import 'package:get_storage/get_storage.dart';
 import 'package:plix/features/dashboard/presentation/tabs/dashboard_screen.dart';
 
 import 'package:plix/features/dashboard/presentation/tabs/total_list.dart';
+import 'package:plix/helpers/di.dart';
 
 import 'package:plix/helpers/helper.dart';
+import 'package:plix/provider/launch_status.dart';
 import 'package:plix/widgets/app_drawer.dart';
 
 import 'features/dashboard/presentation/dashboard_main_screen.dart';
@@ -31,24 +33,26 @@ class _LoadingState extends State<Loading> {
 
   @override
   void initState() {
+    if (locator<Launch>().firstLaunchSt) {
+      appData.write(kKeyIsLoggedIn, false);
+    }
+    ;
+
     setId();
     loadInitialData();
     super.initState();
   }
 
   loadInitialData() async {
-    await getSliderRXObj.fetchSlider();
-    await getShopCategoriRXObj.fetchShopCategoryData();
-    await getShopItemRXObj.fetchShopItemData();
     appData.writeIfNull(kKeyIsLoggedIn, false);
     if (appData.read(kKeyIsLoggedIn)) {
       String token = appData.read(kKeyAccessToken);
       DioSingleton.instance.update(token);
       LocalNotificationService.getToken();
-      await getCartRXObj.getCartData();
-      await getAddressRXObj.getAddressData();
-      await getDefaultAddressRXObj.getDefaultAddressData();
-      await getOrderListRXObj.getOrderListData();
+      getNoticeRXObj.fetchNotice();
+      getLeaveTypeReqRXObj.fetchLeaveTypeReq();
+      getLeaveReqListRXObj.getLeaveListReq();
+      getProfileReqRXObj.fetchProfileData();
     }
     setState(() {
       _isLoading = false;

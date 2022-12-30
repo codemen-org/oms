@@ -341,8 +341,8 @@ class _VerifyOtpPageState extends State<VerifyOtpScreen> {
                                               _codeController1.text.trim() +
                                               _codeController2.text.trim() +
                                               _codeController3.text.trim();
-                                      await getVerifyOtpRXObj.verifyOtp(
-                                          code: otpCode, email: email);
+                                      // await getVerifyOtpRXObj.verifyOtp(
+                                      //     code: otpCode, email: email);
                                     },
                                     backgroundColor: AppColors.appColorEDBB43,
                                     title: 'Confirm'.tr,

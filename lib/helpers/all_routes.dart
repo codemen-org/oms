@@ -2,23 +2,22 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 
 import 'package:plix/features/authentication/presentation/login/login_screen.dart';
-import 'package:plix/features/address/presentation/address_screen.dart';
+
 import 'package:plix/features/leaverequest/presentation/leave_details_screen.dart';
-import 'package:plix/features/product/presentation/product_detail_screen.dart';
+
 import 'package:plix/widgets/app_drawer.dart';
 
 import '../features/authentication/presentation/forget_pw/forget_pw_screen.dart';
 import '../features/authentication/presentation/forget_pw/insertmail_screen.dart';
 import '../features/authentication/presentation/signup/verifyotp/otp.dart';
 
-import '../features/categories/presentation/category_search_screen.dart';
-import '../features/checkout/presentation/payment_option.dart';
 import '../features/authentication/presentation/signup/signup_screen.dart';
 
 import '../features/dashboard/presentation/dashboard_main_screen.dart';
 import '../features/dashboard/presentation/tabs/dashboard_screen.dart';
 import '../features/leaverequest/presentation/leave_request_screen.dart';
-import '../features/order_history/presentation/order_history_screen.dart';
+
+import '../features/notice/presentation/noticedetail_screen.dart';
 import '../features/profile/presentation/profile_edit_screen.dart';
 import '../features/profile/presentation/profle_screen.dart';
 import '../features/show_all_search/presentation/show_all.dart';
@@ -34,6 +33,7 @@ class Routes {
   static const String profileEditScreen = '/ProfileEditScreen';
   static const String dashBoardMainScreen = '/DashBoardMainScreen';
   static const String leaveReqScreen = '/LeaveReqScreen';
+  static const String noticedetailsScreen = '/noticedetailsScreen';
   static const String leaveDetailesScreen = '/leaveDetailesScreen';
   static const String searchScreen = '/SearchScreen';
 
@@ -111,7 +111,16 @@ class RouteGenerator {
                 widget: const LeavedetailsScreen(),
                 settings:
                     settings) //_FadedTransitionRoute(builder: (context)=> const SobrenosScreen())
-            : CupertinoPageRoute(builder: (context) => const LeavedetailsScreen());
+            : CupertinoPageRoute(
+                builder: (context) => const LeavedetailsScreen());
+      case Routes.noticedetailsScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const NoticedetailsScreen(),
+                settings:
+                    settings) //_FadedTransitionRoute(builder: (context)=> const SobrenosScreen())
+            : CupertinoPageRoute(
+                builder: (context) => const NoticedetailsScreen());
       case Routes.searchScreen:
         return Platform.isAndroid
             ? _FadedTransitionRoute(
@@ -119,49 +128,6 @@ class RouteGenerator {
                 settings:
                     settings) //_FadedTransitionRoute(builder: (context)=> const SobrenosScreen())
             : CupertinoPageRoute(builder: (context) => const SearchScreen());
-      case Routes.productDetailScreen:
-        return Platform.isAndroid
-            ? _FadedTransitionRoute(
-                widget: const ProductDetailScreen(),
-                settings:
-                    settings) //_FadedTransitionRoute(builder: (context)=> const SobrenosScreen())
-            : CupertinoPageRoute(
-                builder: (context) => const ProductDetailScreen());
-      case Routes.addressScreen:
-        final args = settings.arguments as Map;
-        return Platform.isAndroid
-            ? _FadedTransitionRoute(
-                widget: AddressScreen(addressId: args['id']),
-                settings: settings)
-            : CupertinoPageRoute(builder: (context) => AddressScreen());
-      case Routes.orderHistoryScreen:
-        return Platform.isAndroid
-            ? _FadedTransitionRoute(
-                widget: OrderHistoryScreen(), settings: settings)
-            : CupertinoPageRoute(builder: (context) => OrderHistoryScreen());
-      case Routes.paymentScreen:
-        final args = settings.arguments as Map;
-        return Platform.isAndroid
-            ? _FadedTransitionRoute(
-                widget: PaymentScreen(orderID: args["orderID"]),
-                settings: settings)
-            : CupertinoPageRoute(
-                builder: (context) => PaymentScreen(orderID: args["orderID"]));
-
-      case Routes.categorySearch:
-        final args = settings.arguments as Map;
-        return Platform.isAndroid
-            ? _FadedTransitionRoute(
-                widget: CategorySearch(
-                  allCategories: args["allCategories"],
-                  catname: args["name"],
-                ),
-                settings: settings)
-            : CupertinoPageRoute(
-                builder: (context) => CategorySearch(
-                      allCategories: args["allCategories"],
-                      catname: args["name"],
-                    ));
       case Routes.verifyOtpScreen:
         return Platform.isAndroid
             ? _FadedTransitionRoute(

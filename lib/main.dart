@@ -7,13 +7,12 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:plix/constants/app_color.dart';
 
-import 'package:plix/features/address/presentation/address_screen.dart';
 import 'package:plix/features/authentication/presentation/login/login_screen.dart';
 import 'package:plix/provider/email.dart';
 import 'package:plix/provider/hide_appbar_provider.dart';
 import 'package:plix/welcome_screen.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import '/constants/custome_theme.dart';
 import '/helpers/all_routes.dart';
 import 'features/authentication/presentation/signup/verifyotp/otp.dart';
@@ -26,15 +25,14 @@ import 'helpers/navigation_service.dart';
 import 'helpers/notification_service.dart';
 import 'navigation_screen.dart';
 import 'provider/catpopup_status.dart';
-import 'provider/order_date_time.dart';
+
 import 'provider/product_id_provider.dart';
 import 'provider/sub_category.dart';
-import 'features/categories/presentation/category_search_screen.dart';
+
 import 'loading_screen.dart';
-import 'features/checkout/presentation/payment_option.dart';
-import 'features/product/presentation/product_detail_screen.dart';
 
 Future<void> backgroundHandler(RemoteMessage message) async {}
+
 void main() async {
   diSetup();
   await GetStorage.init();
@@ -59,9 +57,9 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<AppBarNameProvider>(
-          create: ((context) => AppBarNameProvider())),
+            create: ((context) => AppBarNameProvider())),
         ChangeNotifierProvider<HideAppBarProvider>(
-          create: ((context) => HideAppBarProvider())),
+            create: ((context) => HideAppBarProvider())),
       ],
       child: LayoutBuilder(
         builder: (context, constraints) {

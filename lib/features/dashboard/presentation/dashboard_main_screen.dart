@@ -31,7 +31,7 @@ class _DashBoardMainScreenState extends State<DashBoardMainScreen>
   @override
   void initState() {
     tabController = TabController(length: 2, vsync: this);
-    appBarName(name: "Overview", context: context);
+    appBarName(name: "Dashboard", context: context);
     super.initState();
   }
 
@@ -41,7 +41,10 @@ class _DashBoardMainScreenState extends State<DashBoardMainScreen>
       drawer: AppDrawer(),
       appBar: AppBar(
         title: Consumer<AppBarNameProvider>(
-            builder: (context, value, child) => Text(value.name, style: TextFontStyle.headline11StyleInter,)),
+            builder: (context, value, child) => Text(
+                  value.name,
+                  style: TextFontStyle.headline11StyleInter,
+                )),
         actions: [
           InkWell(
             onTap: () {
@@ -72,9 +75,9 @@ class _DashBoardMainScreenState extends State<DashBoardMainScreen>
             onTap: (val) {
               tabController.index = val;
               if (val == 0) {
-                appBarName(name: "Overview", context: context);
+                appBarName(name: "Dashboard", context: context);
               } else if (val == 1) {
-                appBarName(name: "Total List", context: context);
+                appBarName(name: "Leave List", context: context);
               }
             },
             automaticIndicatorColorAdjustment: true,
@@ -82,10 +85,14 @@ class _DashBoardMainScreenState extends State<DashBoardMainScreen>
             labelColor: AppColors.primeryColor,
             tabs: <Widget>[
               Text(
-                "Overview", style: TextFontStyle.headline7StyleInter.copyWith(color: AppColors.text80),
+                "Overview",
+                style: TextFontStyle.headline7StyleInter
+                    .copyWith(color: AppColors.text80),
               ),
               Text(
-                "Total List", style: TextFontStyle.headline7StyleInter.copyWith(color: AppColors.text80),
+                "My Leave",
+                style: TextFontStyle.headline7StyleInter
+                    .copyWith(color: AppColors.text80),
               ),
             ],
           ),

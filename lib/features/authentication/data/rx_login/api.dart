@@ -7,7 +7,7 @@ import '/networks/endpoints.dart';
 class LoginApi {
   Future<Map> login(String email, String password) async {
     Map data = {
-      "email_phone": email,
+      "username": email,
       "password": password,
     };
 

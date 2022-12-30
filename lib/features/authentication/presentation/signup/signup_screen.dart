@@ -375,14 +375,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         context: context,
                         onCallBack: () async {
                           if (_formKey.currentState!.validate()) {
-                            getSignUpRXObj.signup(
-                                firstName: firstNameController.text,
-                                lastName: lastNameController.text,
-                                email: emailController.text,
-                                phone: telePhoneController.text,
-                                password: passwordController.text,
-                                retypePw: reTypePasswordController.text);
-                            emailProvider.changeemail(emailController.text);
+                            // getSignUpRXObj.signup(
+                            //     firstName: firstNameController.text,
+                            //     lastName: lastNameController.text,
+                            //     email: emailController.text,
+                            //     phone: telePhoneController.text,
+                            //     password: passwordController.text,
+                            //     retypePw: reTypePasswordController.text);
+                            // emailProvider.changeemail(emailController.text);
                             // setId();
                             // await getLoginRXobj.login(
                             //     emailController.text, passwordController.text);

@@ -33,6 +33,7 @@ class AssetIcons {
   static const String drawerIcon = 'assets/icons/drawer_icon.svg';
   static const String closeIcon = 'assets/icons/close.svg';
   static const String userImage = 'assets/icons/user_image.png';
+  static const String cmImage = 'assets/icons/cm.png';
 
   //lotti
   static const String lottie_list_loading =
@@ -142,6 +143,11 @@ const String kKeycategoriesID = 'categoriesId';
 const String kKeyproductID = 'productId';
 const String kKeyShopSlug = 'shop_slug';
 const String kKeyRestaurantID = 'productId';
+const String kKeyRememberMe = 'rememberme';
+const String kKeyPassWord = 'password';
+const String kKeyUserName = 'userName';
+const String kKeyEmployeeID = 'empID';
+
 //order statuses
 
 const List<String> kLanguagesKey = [

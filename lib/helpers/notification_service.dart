@@ -64,7 +64,7 @@ class LocalNotificationService {
       final id = DateTime.now().millisecondsSinceEpoch ~/ 1000;
       const NotificationDetails notificationDetails = NotificationDetails(
         android: AndroidNotificationDetails(
-          "plix",
+          "oms",
           "plixpushnotificationappchannel",
           importance: Importance.max,
           priority: Priority.high,
@@ -98,7 +98,7 @@ class LocalNotificationService {
 
   static Future<void> sendToken(String token) async {
     try {
-      postDeviceTokenRXobj.postDeviceToken(token: token);
+      // postDeviceTokenRXobj.postDeviceToken(token: token);
     } catch (error) {
       rethrow;
     }

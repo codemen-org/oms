@@ -4,22 +4,20 @@ import '../../../../constants/app_constants.dart';
 
 import 'api.dart';
 
-class PostDeviceTokenRX {
-  final api = PostDeviceTokenApi();
+class GetLeaveReqListRX {
+  final api = GetLeaveReqListApi();
   late Map empty;
   final BehaviorSubject _dataFetcher = BehaviorSubject<Map>();
 
-  ValueStream get getPostDeviceTokenRes => _dataFetcher.stream;
+  ValueStream get getLeaveReqListStream => _dataFetcher.stream;
 
-  Future<void> postDeviceToken({String? token}) async {
+  Future<void> getLeaveListReq() async {
     try {
       GetStorage storage = GetStorage();
       Map<String, dynamic> data = {
-        'user_id': storage.read(kKeyUserID),
-        'device_id': storage.read(kKeyDeviceID),
-        'token': token
+        "employee_id": storage.read(kKeyEmployeeID),
       };
-      Map resdata = await api.postDeviceToken(data);
+      Map resdata = await api.getLeaveList(data);
       _dataFetcher.sink.add(resdata);
     } catch (e) {
       _dataFetcher.sink.addError(e);

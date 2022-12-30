@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.plix.app</string>
+	<string>codemen.org.app</string>
 	<key>PROJECT_ID</key>
 	<string>plix-257f0</string>
 	<key>STORAGE_BUCKET</key>

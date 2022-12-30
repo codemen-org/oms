@@ -4,7 +4,7 @@
 //test local
 //const String url = "http://3b78-118-179-44-20.ngrok.io";
 //staging
-const String url = "https://applix.squaredsys.com";
+const String url = "https://api.codemen.org";
 
 class NetworkConstants {
   static const ACCEPT = "Accept";
@@ -24,7 +24,14 @@ class PaymentGateway {
 }
 
 class Endpoints {
-  static String postlogin() => "/api/login";
+  static String postlogin() => "/api/v1/login";
+  static String getNoticeList() => "/api/v1/notices";
+  static String getNoticeDetail(String id) => "/api/v1/notice/$id";
+  static String getLeaveType() => "/api/v1/leave-types";
+  static String postLeaveReq() => "/api/v1/leave-request/create";
+  static String getLeaveReqList() => "/api/v1/leave-requests";
+  static String getProfile(String id) => "/api/v1/user/$id";
+
   static String postSignUp() => "/api/signup";
   static String postVerify() => "/api/verify-code";
   static String getLogout() => "/api/logout";

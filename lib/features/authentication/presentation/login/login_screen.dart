@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:plix/helpers/all_routes.dart';
 import 'package:plix/helpers/navigation_service.dart';
 import 'package:plix/widgets/app_drawer.dart';
@@ -24,22 +25,36 @@ class _LogeinScreenState extends State<LogeinScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-
+  final storage = GetStorage();
   String? emailvalidation;
   bool validation = false;
   bool visibility = false;
-  bool isSwitched = false;
+  late bool isSwitched;
 
   void toogleSwitch(bool value) {
     if (isSwitched == false) {
       setState(() {
         isSwitched = true;
+        storage.write(kKeyRememberMe, isSwitched);
       });
     } else {
       setState(() {
         isSwitched = false;
+        storage.write(kKeyRememberMe, isSwitched);
       });
     }
+  }
+
+  @override
+  void initState() {
+    storage.writeIfNull(kKeyRememberMe, false);
+    isSwitched = storage.read(kKeyRememberMe);
+    if (isSwitched) {
+      emailController.text = storage.read(kKeyUser);
+      passwordController.text = storage.read(kKeyPassWord);
+    }
+
+    super.initState();
   }
 
   bool pwsecure = true;
@@ -58,7 +73,8 @@ class _LogeinScreenState extends State<LogeinScreen> {
                 children: <Widget>[
                   Text(
                     "Sign In",
-                    style: TextFontStyle.headline7StyleInter.copyWith(color: AppColors.text80),
+                    style: TextFontStyle.headline7StyleInter
+                        .copyWith(color: AppColors.text80),
                   ),
                   UIHelper.verticalSpaceSmall,
                   Text(
@@ -89,8 +105,9 @@ class _LogeinScreenState extends State<LogeinScreen> {
                   children: <Widget>[
                     // email
                     Text(
-                      "Email",
-                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
+                      "User Name",
+                      style: TextFontStyle.headline12StyleInter
+                          .copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
@@ -99,15 +116,16 @@ class _LogeinScreenState extends State<LogeinScreen> {
                           : AutovalidateMode.disabled,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Enter email';
+                          return 'Enter user name';
                         }
                         return null;
                       },
                       controller: emailController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
-                        hintText: "Enter Email",
-                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
+                        hintText: "User name i.e. john",
+                        hintStyle: TextFontStyle.headline11StyleInter
+                            .copyWith(color: AppColors.text40),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 width: 1.0, color: AppColors.text20)),
@@ -120,7 +138,8 @@ class _LogeinScreenState extends State<LogeinScreen> {
                     //passwords
                     Text(
                       "Password",
-                      style: TextFontStyle.headline12StyleInter.copyWith(color: AppColors.text40),
+                      style: TextFontStyle.headline12StyleInter
+                          .copyWith(color: AppColors.text40),
                     ),
                     UIHelper.verticalSpaceSmall,
                     TextFormField(
@@ -137,7 +156,8 @@ class _LogeinScreenState extends State<LogeinScreen> {
                       obscureText: !visibility,
                       decoration: InputDecoration(
                         hintText: "Enter Password",
-                        hintStyle: TextFontStyle.headline11StyleInter.copyWith(color: AppColors.text40),
+                        hintStyle: TextFontStyle.headline11StyleInter
+                            .copyWith(color: AppColors.text40),
                         suffixIcon: IconButton(
                           color: AppColors.text60,
                           onPressed: () {
@@ -204,21 +224,28 @@ class _LogeinScreenState extends State<LogeinScreen> {
                     .copyWith(color: AppColors.white),
                 context: context,
                 onCallBack: () async {
-                  NavigationService.navigateTo(Routes.dashBoardMainScreen);
-                  // if (_formKey.currentState!.validate()) {
-                  //   setId();
-                  //   await getLoginRXObj.login(
-                  //       emailController.text, passwordController.text);
+                  if (isSwitched) {
+                    storage.write(kKeyUser, emailController.text);
+                    storage.write(kKeyPassWord, passwordController.text);
+                  } else {
+                    storage.write(kKeyUser, null);
+                    storage.write(kKeyPassWord, null);
+                  }
+                  // NavigationService.navigateTo(Routes.dashBoardMainScreen);
+                  if (_formKey.currentState!.validate()) {
+                    setId();
+                    await getLoginRXObj.login(
+                        emailController.text, passwordController.text);
 
-                  //   // setState(() {
-                  //   //   validation = true;
-                  //   // });
-                  // } else {
-                  //   const snackBar = SnackBar(
-                  //       content: Text('Email or Password is not valid'));
+                    // setState(() {
+                    //   validation = true;
+                    // });
+                  } else {
+                    const snackBar = SnackBar(
+                        content: Text('Email or Password is not valid'));
 
-                  //   ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  // }
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  }
                 },
               ),
               UIHelper.verticalSpaceSemiLarge,

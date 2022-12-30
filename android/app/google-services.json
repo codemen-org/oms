@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "518025186145",
-    "project_id": "plix-257f0",
-    "storage_bucket": "plix-257f0.appspot.com"
+    "project_number": "810664873040",
+    "project_id": "cmoms-f6dd3",
+    "storage_bucket": "cmoms-f6dd3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:518025186145:android:e92b8ca7e9a7424783d320",
+        "mobilesdk_app_id": "1:810664873040:android:11a287e0d6fc59efbf9555",
         "android_client_info": {
-          "package_name": "com.plix.app"
+          "package_name": "codemen.org.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "518025186145-fpri47j6k4uo2t1ucvk5586tecbigfbb.apps.googleusercontent.com",
+          "client_id": "810664873040-6dkgik6f4gtv2nbpptge2s4n02bua3e5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCCJVFZeyyZXSKdgQErKBLd4Xe2xHCt0pY"
+          "current_key": "AIzaSyDx_asUHrUrpRQKjwIk4Mbq6wicZGOX43g"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "518025186145-fpri47j6k4uo2t1ucvk5586tecbigfbb.apps.googleusercontent.com",
+              "client_id": "810664873040-6dkgik6f4gtv2nbpptge2s4n02bua3e5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
