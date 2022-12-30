@@ -5,7 +5,7 @@ import '../features/authentication/data/rx_login/rx.dart';
 import '../features/authentication/data/signup/rx.dart';
 
 import '../features/leaverequest/data/rx_get_leave_type/rx.dart';
-import '../features/dashboard/data/rx_post_device_token/rx.dart';
+import '../features/dashboard/data/rx_post_leave_req/rx.dart';
 import '../features/dashboard/data/rx_get_notice_list/rx.dart';
 import '../features/leaverequest/data/rx_post_leave_req/rx.dart';
 import '../features/notice/data/rx_get_notice_detail/rx.dart';

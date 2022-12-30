@@ -31,6 +31,7 @@ class Endpoints {
   static String postLeaveReq() => "/api/v1/leave-request/create";
   static String getLeaveReqList() => "/api/v1/leave-requests";
   static String getProfile(String id) => "/api/v1/user/$id";
+  static String postDeviceToken() => "/api/v1/register/device";
 
   static String postSignUp() => "/api/signup";
   static String postVerify() => "/api/verify-code";
@@ -58,6 +59,6 @@ class Endpoints {
   static String resetPassword() => "/api/change-password";
   static String getOrderList() => "/api/orders";
   static String getOrderDetail(String orderID) => "/api/orders/$orderID";
-  static String postDeviceToken() => "/api/device-token";
+
   static String deleteDeviceToken() => "/api/delete-device-token";
 }
