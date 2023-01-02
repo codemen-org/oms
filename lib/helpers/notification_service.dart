@@ -98,7 +98,7 @@ class LocalNotificationService {
 
   static Future<void> sendToken(String token) async {
     try {
-      // postDeviceTokenRXobj.postDeviceToken(token: token);
+      postDeviceTokenRXObj.postDeviceToken(token: token);
     } catch (error) {
       rethrow;
     }

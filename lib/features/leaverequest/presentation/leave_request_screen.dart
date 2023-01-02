@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:plix/helpers/all_routes.dart';
+import 'package:plix/helpers/dateuitl.dart';
 import 'package:plix/helpers/navigation_service.dart';
 import 'package:plix/widgets/app_drawer.dart';
 import '../../../helpers/helper.dart';
@@ -23,7 +24,8 @@ class LeaveReqScreen extends StatefulWidget {
   State<LeaveReqScreen> createState() => _LeaveReqScreenState();
 }
 
-class _LeaveReqScreenState extends State<LeaveReqScreen> {
+class _LeaveReqScreenState extends State<LeaveReqScreen>
+    with DateFormatedUtils {
   int? _value;
   String radioValue = "";
   DateTime? _dateTime;
@@ -39,9 +41,14 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
         lastDate: DateTime(DateTime.now().year + 2));
     setState(() {
       _dateTime = date;
-      startDateTimeController.text = date!.toIso8601String();
+      startDateTimeController.text = date!.day.toString() +
+          "-" +
+          date!.month.toString() +
+          "-" +
+          date!.year.toString();
       difference = _dateTime1!.difference(_dateTime!).inDays;
       log(difference.toString());
+      log(getFormatedDateWithTZone(_dateTime!));
     });
   }
 
@@ -54,23 +61,28 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
         lastDate: DateTime(DateTime.now().year + 2));
     setState(() {
       _dateTime1 = date1;
-      endDateTimeController.text = date1!.toIso8601String();
+      endDateTimeController.text = date1!.day.toString() +
+          "-" +
+          date1!.month.toString() +
+          "-" +
+          date1!.year.toString();
       difference = date1.difference(_dateTime!).inDays;
       log(difference.toString());
     });
   }
 
   TextEditingController leaveTypeController = TextEditingController();
+  TextEditingController leaveTypeNameController = TextEditingController();
   TextEditingController startDateTimeController = TextEditingController();
   TextEditingController endDateTimeController = TextEditingController();
   TextEditingController reasonController = TextEditingController();
   TextEditingController dayOffController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
-  String? emailvalidation;
   bool validation = false;
   bool visibility = false;
   bool isSwitched = false;
+  bool firstLoading = true;
 
   void toogleSwitch(bool value) {
     if (isSwitched == false) {
@@ -87,10 +99,14 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
   bool pwsecure = true;
   @override
   void initState() {
-    if (!mounted) return;
-    setState(() {
-      leaveTypeController.text = "-Select-";
-    });
+    if (firstLoading) {
+      if (!mounted) return;
+      setState(() {
+        leaveTypeNameController.text = "-Select-";
+        firstLoading = false;
+      });
+    }
+
     super.initState();
   }
 
@@ -137,31 +153,8 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                                 color: AppColors.borderColor, width: 0.5)),
                         child: LeaveTypePopupWidget(
                             categorygroupPopupText: leaveTypeController,
-                            value: leaveTypeController.text),
+                            value: leaveTypeNameController.text),
                       ),
-
-                      // TextFormField(
-                      //   autovalidateMode: validation
-                      //       ? AutovalidateMode.always
-                      //       : AutovalidateMode.disabled,
-                      //   validator: (value) {
-                      //     if (value == null || value.isEmpty) {
-                      //       return 'Enter name';
-                      //     }
-                      //     return null;
-                      //   },
-                      //   keyboardType: TextInputType.emailAddress,
-                      //   decoration: InputDecoration(
-                      //     hintText: "Enter name",
-                      //     hintStyle: TextFontStyle.headline11StyleInter
-                      //         .copyWith(color: AppColors.text40),
-                      //     enabledBorder: OutlineInputBorder(
-                      //         borderSide: BorderSide(
-                      //             width: 1.0, color: AppColors.text20)),
-                      //     focusedBorder: OutlineInputBorder(
-                      //         borderSide: BorderSide(color: AppColors.text20)),
-                      //   ),
-                      // ),
 
                       UIHelper.verticalSpaceMedium,
                       Text(
@@ -368,6 +361,8 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                     log(endDateTimeController.text);
                     log(reasonController.text);
                     log(dayOffController.text);
+                    log(_dateTime!.toIso8601String());
+                    log(_dateTime1!.toIso8601String());
 
                     if (leaveTypeController.text == "-Select-") {
                       const snackBar =
@@ -380,8 +375,8 @@ class _LeaveReqScreenState extends State<LeaveReqScreen> {
                     if (_formKey.currentState!.validate()) {
                       postLeaveReqRXObj.postLeaveReq(
                           leave_type_id: leaveTypeController.text,
-                          start_date: startDateTimeController.text,
-                          end_date: endDateTimeController.text,
+                          start_date: getFormatedDateWithTZone(_dateTime!),
+                          end_date: getFormatedDateWithTZone(_dateTime1!),
                           reason: reasonController.text,
                           half_day:
                               difference == 0 ? dayOffController.text : '0');

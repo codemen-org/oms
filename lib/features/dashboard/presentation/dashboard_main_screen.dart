@@ -75,7 +75,7 @@ class _DashBoardMainScreenState extends State<DashBoardMainScreen>
             onTap: (val) {
               tabController.index = val;
               if (val == 0) {
-                appBarName(name: "Dashboard", context: context);
+                appBarName(name: "Noticeboard", context: context);
               } else if (val == 1) {
                 appBarName(name: "Leave List", context: context);
               }
@@ -85,7 +85,7 @@ class _DashBoardMainScreenState extends State<DashBoardMainScreen>
             labelColor: AppColors.primeryColor,
             tabs: <Widget>[
               Text(
-                "Overview",
+                "Noticeboard",
                 style: TextFontStyle.headline7StyleInter
                     .copyWith(color: AppColors.text80),
               ),

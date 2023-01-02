@@ -16,7 +16,7 @@ class PostLeaveReqRX {
   final BehaviorSubject _dataFetcher = BehaviorSubject<Map>();
 
   ValueStream get getPostLeaveReqStream => _dataFetcher.stream;
-  String message = "";
+  String message = "Leave Request Sent";
   Future<void> postLeaveReq({
     required String leave_type_id,
     required String reason,

@@ -2,11 +2,13 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:plix/helpers/helper.dart';
 import 'package:rxdart/rxdart.dart';
 import '../../../../constants/app_constants.dart';
 import '../../../../helpers/di.dart';
 import '../../../../helpers/navigation_service.dart';
 import '../../../../helpers/notification_service.dart';
+import '../../../../networks/api_acess.dart';
 import '../../../../networks/dio/dio.dart';
 import '../../../../provider/launch_status.dart';
 import '../../../../widgets/loading_indicators.dart';
@@ -40,6 +42,7 @@ class GetLoginRX {
       String accesstoken = data['access_token'];
       String userId = data['user_id'];
       locator<Launch>().firstlaunch = false;
+      setId();
       // String phone = data['data']['user']['phone'];
       // String firstName = data['data']['user']['first_name'];
       // String lastName = data['data']['user']['last_name'];
@@ -50,6 +53,7 @@ class GetLoginRX {
       storage.write(kKeyIsLoggedIn, true);
       storage.write(kKeyAccessToken, accesstoken);
       storage.write(kKeyUserID, userId);
+
       // storage.write(kPhone, phone);
       // storage.write(kKeyFirstName, firstName);
       // storage.write(kKeyLastName, lastName);
@@ -58,7 +62,8 @@ class GetLoginRX {
       // storage.write(kKeyRestaurantID, restaurantID);
 
       DioSingleton.instance.update(accesstoken);
-      //  LocalNotificationService.getToken();
+      await getEmpApilRXObj.getEmployee();
+      LocalNotificationService.getToken();
       NavigationService.goBack;
       NavigationService.popAndReplace(Routes.loadingScreen);
     } catch (e) {

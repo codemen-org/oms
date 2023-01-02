@@ -91,7 +91,7 @@ class appbar extends StatelessWidget {
                                 child: CircleAvatar(
                                   radius: 50.r,
                                   backgroundImage: NetworkImage(
-                                      "https://raw.githubusercontent.com/ArjunAtlast/Profile-Card/master/assets/john-doe.png"),
+                                      "https://media-exp1.licdn.com/dms/image/C510BAQGpKxvIe8uHZw/company-logo_200_200/0?e=2159024400&v=beta&t=ACOYEI4eHwH9Pr8ZU3ezoR826KlDTmsQcBgZTadrOGI"),
                                 ),
                               )),
                         ),

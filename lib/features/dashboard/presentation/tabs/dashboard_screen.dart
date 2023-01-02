@@ -28,230 +28,231 @@ class _DashboardScreenState extends State<DashboardScreen> {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: <Widget>[
-              Row(
-                children: [
-                  Card(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        side: BorderSide(color: AppColors.text20)),
-                    color: AppColors.white,
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Container(
-                        color: AppColors.white,
-                        width: 145.0,
-                        child: Column(
-                          children: <Widget>[
-                            Row(
-                              children: <Widget>[
-                                Icon(Icons.chair),
-                                UIHelper.horizontalSpaceSmall,
-                                Text(
-                                  "Leaves",
-                                  style: TextStyle(color: Colors.black),
-                                )
-                              ],
-                            ),
-                            UIHelper.verticalSpaceSmall,
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  "51,855",
-                                  style: TextFontStyle.headline10StyleInter
-                                      .copyWith(color: AppColors.text80),
-                                ),
-                                UIHelper.horizontalSpaceSmall,
-                                Text(
-                                  "+55%",
-                                  style: TextFontStyle.headline8StyleInter
-                                      .copyWith(color: AppColors.primeryColor),
-                                ),
-                              ],
-                            ),
-                            UIHelper.verticalSpaceSmall,
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  "Outstanding Receivables",
-                                  style: TextFontStyle.headline13StyleInter
-                                      .copyWith(color: AppColors.text30),
-                                ),
-                                UIHelper.horizontalSpaceSmall,
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        side: BorderSide(color: AppColors.text20)),
-                    color: AppColors.white,
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Container(
-                        color: AppColors.white,
-                        width: 145.0,
-                        child: Column(
-                          children: <Widget>[
-                            Row(
-                              children: <Widget>[
-                                Icon(Icons.chair),
-                                UIHelper.horizontalSpaceSmall,
-                                Text(
-                                  "Leaves",
-                                  style: TextStyle(color: Colors.black),
-                                )
-                              ],
-                            ),
-                            UIHelper.verticalSpaceSmall,
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  "51,855",
-                                  style: TextFontStyle.headline10StyleInter
-                                      .copyWith(color: AppColors.text80),
-                                ),
-                                UIHelper.horizontalSpaceSmall,
-                                Text(
-                                  "+55%",
-                                  style: TextFontStyle.headline8StyleInter
-                                      .copyWith(color: AppColors.primeryColor),
-                                ),
-                              ],
-                            ),
-                            UIHelper.verticalSpaceSmall,
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  "Outstanding Receivables",
-                                  style: TextFontStyle.headline13StyleInter
-                                      .copyWith(color: AppColors.text30),
-                                ),
-                                UIHelper.horizontalSpaceSmall,
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Card(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        side: BorderSide(color: AppColors.text20)),
-                    color: AppColors.white,
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Container(
-                        color: AppColors.white,
-                        width: 145.0,
-                        child: Column(
-                          children: <Widget>[
-                            Row(
-                              children: <Widget>[
-                                Icon(Icons.chair),
-                                UIHelper.horizontalSpaceSmall,
-                                Text(
-                                  "Leaves",
-                                  style: TextStyle(color: Colors.black),
-                                )
-                              ],
-                            ),
-                            UIHelper.verticalSpaceSmall,
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  "51,855",
-                                  style: TextFontStyle.headline10StyleInter
-                                      .copyWith(color: AppColors.text80),
-                                ),
-                                UIHelper.horizontalSpaceSmall,
-                                Text(
-                                  "+55%",
-                                  style: TextFontStyle.headline8StyleInter
-                                      .copyWith(color: AppColors.primeryColor),
-                                ),
-                              ],
-                            ),
-                            UIHelper.verticalSpaceSmall,
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  "Outstanding Receivables",
-                                  style: TextFontStyle.headline13StyleInter
-                                      .copyWith(color: AppColors.text30),
-                                ),
-                                UIHelper.horizontalSpaceSmall,
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        side: BorderSide(color: AppColors.text20)),
-                    color: AppColors.white,
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Container(
-                        color: AppColors.white,
-                        width: 145.0,
-                        child: Column(
-                          children: <Widget>[
-                            Row(
-                              children: <Widget>[
-                                Icon(Icons.chair),
-                                UIHelper.horizontalSpaceSmall,
-                                Text(
-                                  "Leaves",
-                                  style: TextStyle(color: Colors.black),
-                                )
-                              ],
-                            ),
-                            UIHelper.verticalSpaceSmall,
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  "51,855",
-                                  style: TextFontStyle.headline10StyleInter
-                                      .copyWith(color: AppColors.text80),
-                                ),
-                                UIHelper.horizontalSpaceSmall,
-                                Text(
-                                  "+55%",
-                                  style: TextFontStyle.headline8StyleInter
-                                      .copyWith(color: AppColors.primeryColor),
-                                ),
-                              ],
-                            ),
-                            UIHelper.verticalSpaceSmall,
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  "Outstanding Receivables",
-                                  style: TextFontStyle.headline13StyleInter
-                                      .copyWith(color: AppColors.text30),
-                                ),
-                                UIHelper.horizontalSpaceSmall,
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              // Row(
+              //   children: [
+              //     Card(
+              //       shape: RoundedRectangleBorder(
+              //           borderRadius: BorderRadius.circular(10),
+              //           side: BorderSide(color: AppColors.text20)),
+              //       color: AppColors.white,
+              //       child: Padding(
+              //         padding: const EdgeInsets.all(20.0),
+              //         child: Container(
+              //           color: AppColors.white,
+              //           width: 145.0,
+              //           child: Column(
+              //             children: <Widget>[
+              //               Row(
+              //                 children: <Widget>[
+              //                   Icon(Icons.chair),
+              //                   UIHelper.horizontalSpaceSmall,
+              //                   Text(
+              //                     "Leaves",
+              //                     style: TextStyle(color: Colors.black),
+              //                   )
+              //                 ],
+              //               ),
+              //               UIHelper.verticalSpaceSmall,
+              //               Row(
+              //                 children: <Widget>[
+              //                   Text(
+              //                     "51,855",
+              //                     style: TextFontStyle.headline10StyleInter
+              //                         .copyWith(color: AppColors.text80),
+              //                   ),
+              //                   UIHelper.horizontalSpaceSmall,
+              //                   Text(
+              //                     "+55%",
+              //                     style: TextFontStyle.headline8StyleInter
+              //                         .copyWith(color: AppColors.primeryColor),
+              //                   ),
+              //                 ],
+              //               ),
+              //               UIHelper.verticalSpaceSmall,
+              //               Row(
+              //                 children: <Widget>[
+              //                   Text(
+              //                     "Outstanding Receivables",
+              //                     style: TextFontStyle.headline13StyleInter
+              //                         .copyWith(color: AppColors.text30),
+              //                   ),
+              //                   UIHelper.horizontalSpaceSmall,
+              //                 ],
+              //               )
+              //             ],
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //     Card(
+              //       shape: RoundedRectangleBorder(
+              //           borderRadius: BorderRadius.circular(10),
+              //           side: BorderSide(color: AppColors.text20)),
+              //       color: AppColors.white,
+              //       child: Padding(
+              //         padding: const EdgeInsets.all(20.0),
+              //         child: Container(
+              //           color: AppColors.white,
+              //           width: 145.0,
+              //           child: Column(
+              //             children: <Widget>[
+              //               Row(
+              //                 children: <Widget>[
+              //                   Icon(Icons.chair),
+              //                   UIHelper.horizontalSpaceSmall,
+              //                   Text(
+              //                     "Leaves",
+              //                     style: TextStyle(color: Colors.black),
+              //                   )
+              //                 ],
+              //               ),
+              //               UIHelper.verticalSpaceSmall,
+              //               Row(
+              //                 children: <Widget>[
+              //                   Text(
+              //                     "51,855",
+              //                     style: TextFontStyle.headline10StyleInter
+              //                         .copyWith(color: AppColors.text80),
+              //                   ),
+              //                   UIHelper.horizontalSpaceSmall,
+              //                   Text(
+              //                     "+55%",
+              //                     style: TextFontStyle.headline8StyleInter
+              //                         .copyWith(color: AppColors.primeryColor),
+              //                   ),
+              //                 ],
+              //               ),
+              //               UIHelper.verticalSpaceSmall,
+              //               Row(
+              //                 children: <Widget>[
+              //                   Text(
+              //                     "Outstanding Receivables",
+              //                     style: TextFontStyle.headline13StyleInter
+              //                         .copyWith(color: AppColors.text30),
+              //                   ),
+              //                   UIHelper.horizontalSpaceSmall,
+              //                 ],
+              //               )
+              //             ],
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              // Row(
+              //   children: [
+              //     Card(
+              //       shape: RoundedRectangleBorder(
+              //           borderRadius: BorderRadius.circular(10),
+              //           side: BorderSide(color: AppColors.text20)),
+              //       color: AppColors.white,
+              //       child: Padding(
+              //         padding: const EdgeInsets.all(20.0),
+              //         child: Container(
+              //           color: AppColors.white,
+              //           width: 145.0,
+              //           child: Column(
+              //             children: <Widget>[
+              //               Row(
+              //                 children: <Widget>[
+              //                   Icon(Icons.chair),
+              //                   UIHelper.horizontalSpaceSmall,
+              //                   Text(
+              //                     "Leaves",
+              //                     style: TextStyle(color: Colors.black),
+              //                   )
+              //                 ],
+              //               ),
+              //               UIHelper.verticalSpaceSmall,
+              //               Row(
+              //                 children: <Widget>[
+              //                   Text(
+              //                     "51,855",
+              //                     style: TextFontStyle.headline10StyleInter
+              //                         .copyWith(color: AppColors.text80),
+              //                   ),
+              //                   UIHelper.horizontalSpaceSmall,
+              //                   Text(
+              //                     "+55%",
+              //                     style: TextFontStyle.headline8StyleInter
+              //                         .copyWith(color: AppColors.primeryColor),
+              //                   ),
+              //                 ],
+              //               ),
+              //               UIHelper.verticalSpaceSmall,
+              //               Row(
+              //                 children: <Widget>[
+              //                   Text(
+              //                     "Outstanding Receivables",
+              //                     style: TextFontStyle.headline13StyleInter
+              //                         .copyWith(color: AppColors.text30),
+              //                   ),
+              //                   UIHelper.horizontalSpaceSmall,
+              //                 ],
+              //               )
+              //             ],
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //     Card(
+              //       shape: RoundedRectangleBorder(
+              //           borderRadius: BorderRadius.circular(10),
+              //           side: BorderSide(color: AppColors.text20)),
+              //       color: AppColors.white,
+              //       child: Padding(
+              //         padding: const EdgeInsets.all(20.0),
+              //         child: Container(
+              //           color: AppColors.white,
+              //           width: 145.0,
+              //           child: Column(
+              //             children: <Widget>[
+              //               Row(
+              //                 children: <Widget>[
+              //                   Icon(Icons.chair),
+              //                   UIHelper.horizontalSpaceSmall,
+              //                   Text(
+              //                     "Leaves",
+              //                     style: TextStyle(color: Colors.black),
+              //                   )
+              //                 ],
+              //               ),
+              //               UIHelper.verticalSpaceSmall,
+              //               Row(
+              //                 children: <Widget>[
+              //                   Text(
+              //                     "51,855",
+              //                     style: TextFontStyle.headline10StyleInter
+              //                         .copyWith(color: AppColors.text80),
+              //                   ),
+              //                   UIHelper.horizontalSpaceSmall,
+              //                   Text(
+              //                     "+55%",
+              //                     style: TextFontStyle.headline8StyleInter
+              //                         .copyWith(color: AppColors.primeryColor),
+              //                   ),
+              //                 ],
+              //               ),
+              //               UIHelper.verticalSpaceSmall,
+              //               Row(
+              //                 children: <Widget>[
+              //                   Text(
+              //                     "Outstanding Receivables",
+              //                     style: TextFontStyle.headline13StyleInter
+              //                         .copyWith(color: AppColors.text30),
+              //                   ),
+              //                   UIHelper.horizontalSpaceSmall,
+              //                 ],
+              //               )
+              //             ],
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // ),
+
               UIHelper.verticalSpaceSmall,
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -259,26 +260,26 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Notice"),
-                    Column(
-                      children: [
-                        InkWell(
-                            onTap: () {
-                              NavigationService.navigateTo(Routes.searchScreen);
-                            },
-                            child: Text(
-                              "View All",
-                              style: TextStyle(color: AppColors.primeryColor),
-                            )),
-                        Container(
-                            width: 50.0,
-                            decoration: BoxDecoration(
-                                border: Border(
-                                    bottom: BorderSide(
-                              color: AppColors.primeryColor,
-                              width: 1.0,
-                            ))))
-                      ],
-                    ),
+                    // Column(
+                    //   children: [
+                    //     InkWell(
+                    //         onTap: () {
+                    //           NavigationService.navigateTo(Routes.searchScreen);
+                    //         },
+                    //         child: Text(
+                    //           "View All",
+                    //           style: TextStyle(color: AppColors.primeryColor),
+                    //         )),
+                    //     Container(
+                    //         width: 50.0,
+                    //         decoration: BoxDecoration(
+                    //             border: Border(
+                    //                 bottom: BorderSide(
+                    //           color: AppColors.primeryColor,
+                    //           width: 1.0,
+                    //         ))))
+                    //   ],
+                    // ),
                   ],
                 ),
               ),

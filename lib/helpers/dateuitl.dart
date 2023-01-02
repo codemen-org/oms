@@ -14,4 +14,11 @@ class DateFormatedUtils {
     var formatted = formatter.format(now);
     return formatted;
   }
+
+  String getFormatedDateWithTZone(DateTime date) {
+    var formatter = new DateFormat('yyy-MM-dd');
+    // var formatter = new DateFormat(dateFormat);
+    String formattedDate = formatter.format(date);
+    return formattedDate + "T00:00:00Z";
+  }
 }

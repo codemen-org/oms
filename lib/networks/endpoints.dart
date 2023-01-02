@@ -2,7 +2,7 @@
 //live url
 //const String url = "";
 //test local
-//const String url = "http://3b78-118-179-44-20.ngrok.io";
+//const String url = "http://127.0.0.1:3040";
 //staging
 const String url = "https://api.codemen.org";
 
@@ -32,6 +32,10 @@ class Endpoints {
   static String getLeaveReqList() => "/api/v1/leave-requests";
   static String getProfile(String id) => "/api/v1/user/$id";
   static String postDeviceToken() => "/api/v1/register/device";
+  static String getEmployee(String userId) => "/api/v1/employee/$userId";
+  static String getDBLeaveInfo() => "/api/v1/leave-request/count/employee";
+  static String getLeaveDetailByID(String leaveId) =>
+      "/api/v1/leave-request/$leaveId";
 
   static String postSignUp() => "/api/signup";
   static String postVerify() => "/api/verify-code";

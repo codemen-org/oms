@@ -18,15 +18,17 @@ class PostLeaveReqApi {
     final storage = GetStorage();
     String empID = storage.read(kKeyEmployeeID);
     Map data = {
-      "employee_id": empID,
-      "leave_type_id": leave_type_id,
-      "reason": reason,
-      "start_date": start_date,
-      "end_date": end_date,
-      "half_day": half_day
+      "leaveRequest": {
+        "employee_id": empID,
+        "leave_type_id": leave_type_id,
+        "reason": reason,
+        "start_date": start_date,
+        "end_date": end_date,
+        "half_day": half_day
+      }
     };
 
-    final response = await postHttp(Endpoints.postLeaveReq());
+    final response = await postHttp(Endpoints.postLeaveReq(), data);
 
     if (response.statusCode == 200) {
       Map data = json.decode(json.encode(response.data));

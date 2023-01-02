@@ -179,7 +179,7 @@ class _LogeinScreenState extends State<LogeinScreen> {
                   ],
                 ),
               ),
-              UIHelper.verticalSpaceSemiLarge,
+              // UIHelper.verticalSpaceSemiLarge,
               Row(
                 children: <Widget>[
                   Switch(
@@ -187,29 +187,27 @@ class _LogeinScreenState extends State<LogeinScreen> {
                     onChanged: toogleSwitch,
                     activeColor: AppColors.primeryColor,
                   ),
-                  TextButton(
-                    child: Text(
-                      "Remember Me",
-                      style: TextStyle(color: AppColors.text40),
-                    ),
-                    onPressed: () {},
+                  Text(
+                    "Remember Me",
+                    style: TextStyle(color: AppColors.text40),
                   ),
+
                   UIHelper.horizontalSpaceSemiLarge,
                   Spacer(),
-                  TextButton(
-                    child: Text(
-                      'Forgot password?',
-                      style: TextStyle(
-                        color: AppColors.text40,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    onPressed: () {
-                      NavigationService.navigateTo(
-                        Routes.emailEntryScreen,
-                      );
-                    },
-                  ),
+                  // TextButton(
+                  //   child: Text(
+                  //     'Forgot password?',
+                  //     style: TextStyle(
+                  //       color: AppColors.text40,
+                  //     ),
+                  //     textAlign: TextAlign.center,
+                  //   ),
+                  //   onPressed: () {
+                  //     NavigationService.navigateTo(
+                  //       Routes.emailEntryScreen,
+                  //     );
+                  //   },
+                  // ),
                 ],
               ),
               UIHelper.verticalSpaceSmall,

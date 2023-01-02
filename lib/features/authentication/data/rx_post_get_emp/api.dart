@@ -6,10 +6,10 @@ import 'package:flutter/foundation.dart';
 import '../../../../networks/dio/dio.dart';
 import '../../../../networks/endpoints.dart';
 
-class PostForgetEmailApi {
-  Future<Map> postForgetEmail(Map data) async {
+class GetEmpApi {
+  Future<Map> getEmp(String empID, Map data) async {
     final response = await postHttp(
-      Endpoints.postForgotPassword(),
+      Endpoints.getEmployee(empID),
       data,
     );
 

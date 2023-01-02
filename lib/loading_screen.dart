@@ -38,7 +38,6 @@ class _LoadingState extends State<Loading> {
     }
     ;
 
-    setId();
     loadInitialData();
     super.initState();
   }
@@ -46,13 +45,11 @@ class _LoadingState extends State<Loading> {
   loadInitialData() async {
     appData.writeIfNull(kKeyIsLoggedIn, false);
     if (appData.read(kKeyIsLoggedIn)) {
-      String token = appData.read(kKeyAccessToken);
-      DioSingleton.instance.update(token);
-      LocalNotificationService.getToken();
       getNoticeRXObj.fetchNotice();
       getLeaveTypeReqRXObj.fetchLeaveTypeReq();
       getLeaveReqListRXObj.getLeaveListReq();
       getProfileReqRXObj.fetchProfileData();
+      getLeaveDBRXObj.getLeaveDBInfo();
     }
     setState(() {
       _isLoading = false;
